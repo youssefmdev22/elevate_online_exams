@@ -1,0 +1,126 @@
+// DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
+// This is a library that provides messages for a en locale. All the
+// messages from the main program should be duplicated here with the same
+// function name.
+
+// Ignore issues from commonly used lints in this file.
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
+// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
+// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
+// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
+
+import 'package:intl/intl.dart';
+import 'package:intl/message_lookup_by_library.dart';
+
+final messages = new MessageLookup();
+
+typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
+
+class MessageLookup extends MessageLookupByLibrary {
+  String get localeName => 'en';
+
+  final messages = _notInlinedMessages(_notInlinedMessages);
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "algebra": MessageLookupByLibrary.simpleMessage("Algebra"),
+    "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account? Login",
+    ),
+    "answers": MessageLookupByLibrary.simpleMessage("Answers"),
+    "appName": MessageLookupByLibrary.simpleMessage("Online Exams"),
+    "back": MessageLookupByLibrary.simpleMessage("Back"),
+    "change": MessageLookupByLibrary.simpleMessage("Change"),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm password"),
+    "correct": MessageLookupByLibrary.simpleMessage("Correct"),
+    "correctedAnswersInfo": MessageLookupByLibrary.simpleMessage(
+      "18 corrected answers in 25 min.",
+    ),
+    "currentPassword": MessageLookupByLibrary.simpleMessage("Current password"),
+    "done": MessageLookupByLibrary.simpleMessage("Done"),
+    "editProfile": MessageLookupByLibrary.simpleMessage("Edit profile"),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "emailNotValid": MessageLookupByLibrary.simpleMessage(
+      "This Email is not valid",
+    ),
+    "emailVerification": MessageLookupByLibrary.simpleMessage(
+      "Email verification",
+    ),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
+    "enterAssociatedEmail": MessageLookupByLibrary.simpleMessage(
+      "Please enter your email associated to your account",
+    ),
+    "enterEmail": MessageLookupByLibrary.simpleMessage("Enter your Email"),
+    "enterFirstName": MessageLookupByLibrary.simpleMessage("Enter first name"),
+    "enterLastName": MessageLookupByLibrary.simpleMessage("Enter last name"),
+    "enterPassword": MessageLookupByLibrary.simpleMessage("Enter password"),
+    "enterUserName": MessageLookupByLibrary.simpleMessage(
+      "Enter your user name",
+    ),
+    "enterVerificationCode": MessageLookupByLibrary.simpleMessage(
+      "Please enter your code that send to your email address",
+    ),
+    "enterYourEmail": MessageLookupByLibrary.simpleMessage("Enter your email"),
+    "enterYourPassword": MessageLookupByLibrary.simpleMessage(
+      "Enter your password",
+    ),
+    "exam": MessageLookupByLibrary.simpleMessage("Exam"),
+    "examScore": MessageLookupByLibrary.simpleMessage("Exam score"),
+    "explore": MessageLookupByLibrary.simpleMessage("Explore"),
+    "finish": MessageLookupByLibrary.simpleMessage("Finish"),
+    "firstName": MessageLookupByLibrary.simpleMessage("First name"),
+    "forgetPassword": MessageLookupByLibrary.simpleMessage("Forget password"),
+    "forgetPasswordQuestion": MessageLookupByLibrary.simpleMessage(
+      "Forget password?",
+    ),
+    "highLevel": MessageLookupByLibrary.simpleMessage("High level"),
+    "incorrect": MessageLookupByLibrary.simpleMessage("Incorrect"),
+    "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
+    "invalidCode": MessageLookupByLibrary.simpleMessage("Invalid code"),
+    "invalidPassword": MessageLookupByLibrary.simpleMessage("Invalid password"),
+    "itsGoingToRain": MessageLookupByLibrary.simpleMessage(
+      "Its going to rain today.",
+    ),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "languages": MessageLookupByLibrary.simpleMessage("Languages"),
+    "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
+    "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "math": MessageLookupByLibrary.simpleMessage("Math"),
+    "newPassword": MessageLookupByLibrary.simpleMessage("New password"),
+    "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "noAccountSignup": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account? Sign up",
+    ),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordNotMatched": MessageLookupByLibrary.simpleMessage(
+      "Password not matched",
+    ),
+    "passwordRule": MessageLookupByLibrary.simpleMessage(
+      "Password must not be empty and must contain 6 characters with upper case letter and one number at least",
+    ),
+    "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "questionXofX": MessageLookupByLibrary.simpleMessage("Question X of X"),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+    "resendCode": MessageLookupByLibrary.simpleMessage(
+      "Didn\'t receive code? Resend",
+    ),
+    "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
+    "result": MessageLookupByLibrary.simpleMessage("Result"),
+    "results": MessageLookupByLibrary.simpleMessage("Results"),
+    "selectCorrectSentence": MessageLookupByLibrary.simpleMessage(
+      "Select the correctly punctuated sentence.",
+    ),
+    "showResults": MessageLookupByLibrary.simpleMessage("Show results"),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+    "signup": MessageLookupByLibrary.simpleMessage("Signup"),
+    "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
+    "start": MessageLookupByLibrary.simpleMessage("Start"),
+    "startAgain": MessageLookupByLibrary.simpleMessage("Start again"),
+    "thirtyMinutes": MessageLookupByLibrary.simpleMessage("30 Minutes"),
+    "timeOut": MessageLookupByLibrary.simpleMessage("Time out !!"),
+    "twentyQuestions": MessageLookupByLibrary.simpleMessage("20 Question"),
+    "update": MessageLookupByLibrary.simpleMessage("Update"),
+    "userName": MessageLookupByLibrary.simpleMessage("User name"),
+    "yourScore": MessageLookupByLibrary.simpleMessage("Your score"),
+  };
+}
