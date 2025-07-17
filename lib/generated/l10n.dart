@@ -28,10 +28,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -570,6 +569,46 @@ class S {
     return Intl.message(
       'Don\'t have an account? Sign up',
       name: 'noAccountSignup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account? `
+  String get notHaveAnAccount {
+    return Intl.message(
+      'Don\'t have an account? ',
+      name: 'notHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `password is required`
+  String get passwordIsRequired {
+    return Intl.message(
+      'password is required',
+      name: 'passwordIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `email is required`
+  String get emailIsRequired {
+    return Intl.message(
+      'email is required',
+      name: 'emailIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `enter valid email`
+  String get enterValidEmail {
+    return Intl.message(
+      'enter valid email',
+      name: 'enterValidEmail',
       desc: '',
       args: [],
     );

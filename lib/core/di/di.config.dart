@@ -20,7 +20,10 @@ import '../../api/web_services/web_services.dart' as _i99;
 import '../../data/datasource/auth_online_data_source.dart' as _i151;
 import '../../data/repos/auth_repo_impl.dart' as _i666;
 import '../../domain/repos/auth_repo.dart' as _i595;
+import '../../domain/usecase/login_use_case.dart' as _i683;
 import '../../domain/usecase/register_use_case.dart' as _i717;
+import '../../presentation/view_models/login_view_model/login_view_model.dart'
+    as _i433;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -49,8 +52,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i595.AuthRepo>(
       () => _i666.AuthRepoImpl(gh<_i151.AuthOnlineDataSource>()),
     );
+    gh.factory<_i683.LoginUseCase>(
+      () => _i683.LoginUseCase(gh<_i595.AuthRepo>()),
+    );
     gh.factory<_i717.RegisterUseCase>(
       () => _i717.RegisterUseCase(gh<_i595.AuthRepo>()),
+    );
+    gh.factory<_i433.LoginViewModel>(
+      () => _i433.LoginViewModel(gh<_i683.LoginUseCase>()),
     );
     return this;
   }

@@ -25,6 +25,7 @@ abstract class AppTheme {
       bodySmall: getInterTextStyle(fontSize: 14.sp),
     ),
     inputDecorationTheme: InputDecorationTheme(
+    
       filled: true,
       fillColor: AppColors.white,
       hintStyle: getInterTextStyle(fontSize: 14.sp, color: AppColors.gray),

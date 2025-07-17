@@ -1,5 +1,7 @@
 import 'package:elevate_online_exams/api/web_services/web_services.dart';
+import 'package:elevate_online_exams/core/api_result/api_result.dart';
 import 'package:elevate_online_exams/data/datasource/auth_online_data_source.dart';
+import 'package:elevate_online_exams/domain/model/login_model.dart';
 import 'package:elevate_online_exams/domain/model/register_model.dart';
 import 'package:injectable/injectable.dart';
 
@@ -30,5 +32,25 @@ class AuthOnlineDataSourceImpl implements AuthOnlineDataSource {
     });
 
     return response.user!.toRegisterModel();
+  }
+
+  @override
+  Future<ApiResult<LoginModel>> login(String email, String password) async {
+    try {
+      var response = await _webServices.login({
+        "email": email,
+        "password": password,
+      });
+
+      return ApiSuccessResult(response.user!.toLoginModel(response.token!));
+    } catch (e) {
+      // if (e is DioException) {
+      //   String errorMessage = handleDioError(e);
+      //   return ApiErrorResult(errorMessage);
+      //   // return ApiErrorResult(e.message ?? e.toString());
+      // }
+      // return ApiErrorResult(e.toString());
+      return ApiErrorResult(e);
+    }
   }
 }

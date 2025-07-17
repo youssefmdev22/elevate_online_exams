@@ -1,4 +1,6 @@
+import 'package:elevate_online_exams/core/api_result/api_result.dart';
 import 'package:elevate_online_exams/data/datasource/auth_online_data_source.dart';
+import 'package:elevate_online_exams/domain/model/login_model.dart';
 import 'package:elevate_online_exams/domain/model/register_model.dart';
 import 'package:elevate_online_exams/domain/repos/auth_repo.dart';
 import 'package:injectable/injectable.dart';
@@ -28,5 +30,10 @@ class AuthRepoImpl implements AuthRepo {
       rePassword,
       phone,
     );
+  }
+
+  @override
+  Future<ApiResult<LoginModel>> login(String email, String password) {
+    return _authOnlineDataSource.login(email, password);
   }
 }
