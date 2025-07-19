@@ -14,16 +14,20 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:pretty_dio_logger/pretty_dio_logger.dart' as _i528;
 
+import '../../api/datasource/auth_offline_data_source_impl.dart' as _i622;
 import '../../api/datasource/auth_online_data_source_impl.dart' as _i281;
 import '../../api/web_services/di.dart' as _i1003;
 import '../../api/web_services/web_services.dart' as _i99;
+import '../../data/datasource/auth_offline_data_source.dart' as _i397;
 import '../../data/datasource/auth_online_data_source.dart' as _i151;
 import '../../data/repos/auth_repo_impl.dart' as _i666;
 import '../../domain/repos/auth_repo.dart' as _i595;
+import '../../domain/usecase/load_saved_user_credentials_use_case.dart'
+    as _i156;
 import '../../domain/usecase/login_use_case.dart' as _i683;
 import '../../domain/usecase/register_use_case.dart' as _i717;
-import '../../presentation/view_models/login_view_model/login_view_model.dart'
-    as _i433;
+import '../../presentation/auth/login/view_models/login_view_model/login_view_model.dart'
+    as _i752;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -36,6 +40,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i361.BaseOptions>(() => networkModule.provideBaseOptions());
     gh.singleton<_i528.PrettyDioLogger>(
       () => networkModule.providePrettyDioLogger(),
+    );
+    gh.factory<_i397.AuthOfflineDataSource>(
+      () => _i622.AuthOfflineDataSourceImpl(),
     );
     gh.singleton<_i361.Dio>(
       () => networkModule.provideDio(
@@ -50,7 +57,10 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i281.AuthOnlineDataSourceImpl(gh<_i99.WebServices>()),
     );
     gh.factory<_i595.AuthRepo>(
-      () => _i666.AuthRepoImpl(gh<_i151.AuthOnlineDataSource>()),
+      () => _i666.AuthRepoImpl(
+        gh<_i151.AuthOnlineDataSource>(),
+        gh<_i397.AuthOfflineDataSource>(),
+      ),
     );
     gh.factory<_i683.LoginUseCase>(
       () => _i683.LoginUseCase(gh<_i595.AuthRepo>()),
@@ -58,8 +68,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i717.RegisterUseCase>(
       () => _i717.RegisterUseCase(gh<_i595.AuthRepo>()),
     );
-    gh.factory<_i433.LoginViewModel>(
-      () => _i433.LoginViewModel(gh<_i683.LoginUseCase>()),
+    gh.factory<_i156.LoadSavedUserCredentialsUseCase>(
+      () => _i156.LoadSavedUserCredentialsUseCase(gh<_i595.AuthRepo>()),
+    );
+    gh.factory<_i752.LoginViewModel>(
+      () => _i752.LoginViewModel(
+        gh<_i683.LoginUseCase>(),
+        gh<_i156.LoadSavedUserCredentialsUseCase>(),
+      ),
     );
     return this;
   }

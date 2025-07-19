@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "appName": MessageLookupByLibrary.simpleMessage("Online Exams"),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
     "change": MessageLookupByLibrary.simpleMessage("Change"),
+    "close": MessageLookupByLibrary.simpleMessage("Close"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm password"),
     "correct": MessageLookupByLibrary.simpleMessage("Correct"),
     "correctedAnswersInfo": MessageLookupByLibrary.simpleMessage(
@@ -90,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "languages": MessageLookupByLibrary.simpleMessage("Languages"),
     "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "math": MessageLookupByLibrary.simpleMessage("Math"),
     "newPassword": MessageLookupByLibrary.simpleMessage("New password"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),

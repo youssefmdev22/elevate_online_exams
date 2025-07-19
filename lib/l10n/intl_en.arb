@@ -72,5 +72,7 @@
   "notHaveAnAccount": "Don't have an account? ",
   "passwordIsRequired": "password is required",
   "emailIsRequired": "email is required",
-  "enterValidEmail": "enter valid email"
+  "enterValidEmail": "enter valid email",
+  "loginFailed": "Login Failed",
+  "close": "Close"
 }

@@ -613,6 +613,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Login Failed`
+  String get loginFailed {
+    return Intl.message(
+      'Login Failed',
+      name: 'loginFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get close {
+    return Intl.message('Close', name: 'close', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

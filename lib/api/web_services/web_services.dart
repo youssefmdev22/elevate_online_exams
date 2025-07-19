@@ -1,3 +1,4 @@
+import 'package:elevate_online_exams/api/model/request/login_request_model/login_request_model.dart';
 import 'package:elevate_online_exams/api/model/response/login_response.dart';
 import 'package:elevate_online_exams/api/model/response/register_response.dart';
 import 'package:elevate_online_exams/core/app/end_points.dart';
@@ -16,5 +17,5 @@ abstract class WebServices {
   Future<RegisterResponse> register(@Body() Map<String, dynamic> body);
 
   @POST(EndPoints.login)
-  Future<LoginResponse> login(@Body() Map<String, dynamic> body);
+  Future<LoginResponse> login(@Body() LoginRequestModel loginRequestModel);
 }

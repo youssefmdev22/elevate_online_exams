@@ -46,12 +46,12 @@ class _WebServices implements WebServices {
   }
 
   @override
-  Future<LoginResponse> login(Map<String, dynamic> body) async {
+  Future<LoginResponse> login(LoginRequestModel loginRequestModel) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(body);
+    _data.addAll(loginRequestModel.toJson());
     final _options = _setStreamType<LoginResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(

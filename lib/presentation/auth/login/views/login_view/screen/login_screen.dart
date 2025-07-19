@@ -1,8 +1,9 @@
 import 'package:elevate_online_exams/core/di/di.dart';
 import 'package:elevate_online_exams/core/route_generator/routes.dart';
-import 'package:elevate_online_exams/presentation/view_models/login_view_model/login_states.dart';
-import 'package:elevate_online_exams/presentation/view_models/login_view_model/login_view_model.dart';
-import 'package:elevate_online_exams/presentation/views/login_view/widgets/login_view_body.dart';
+import 'package:elevate_online_exams/l10n/get_translations.dart';
+import 'package:elevate_online_exams/presentation/auth/login/view_models/login_view_model/login_states.dart';
+import 'package:elevate_online_exams/presentation/auth/login/view_models/login_view_model/login_view_model.dart';
+import 'package:elevate_online_exams/presentation/auth/login/views/login_view/widgets/login_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,14 +27,14 @@ class LoginScreen extends StatelessWidget {
             context: context,
             builder: (_) {
               return AlertDialog(
-                title: Text("Login Failed"),
+                title: Text(getTranslations(context).loginFailed),
                 content: Text(state.errorMessage),
                 actions: [
                   TextButton(
                     onPressed: () {
                       Navigator.maybePop(context);
                     },
-                    child: const Text("Close"),
+                    child: Text(getTranslations(context).close),
                   ),
                 ],
               );

@@ -1,5 +1,5 @@
 import 'package:elevate_online_exams/core/route_generator/routes.dart';
-import 'package:elevate_online_exams/presentation/views/login_view/screen/login_screen.dart';
+import 'package:elevate_online_exams/presentation/auth/login/views/login_view/screen/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {

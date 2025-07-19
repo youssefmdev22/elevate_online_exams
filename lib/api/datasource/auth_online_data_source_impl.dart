@@ -1,3 +1,4 @@
+import 'package:elevate_online_exams/api/model/request/login_request_model/login_request_model.dart';
 import 'package:elevate_online_exams/api/web_services/web_services.dart';
 import 'package:elevate_online_exams/core/api_result/api_result.dart';
 import 'package:elevate_online_exams/data/datasource/auth_online_data_source.dart';
@@ -35,12 +36,11 @@ class AuthOnlineDataSourceImpl implements AuthOnlineDataSource {
   }
 
   @override
-  Future<ApiResult<LoginModel>> login(String email, String password) async {
+  Future<ApiResult<LoginModel>> login(
+    LoginRequestModel loginRequestModel,
+  ) async {
     try {
-      var response = await _webServices.login({
-        "email": email,
-        "password": password,
-      });
+      var response = await _webServices.login(loginRequestModel);
 
       return ApiSuccessResult(response.user!.toLoginModel(response.token!));
     } catch (e) {
