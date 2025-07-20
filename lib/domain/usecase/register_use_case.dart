@@ -1,6 +1,8 @@
 import 'package:elevate_online_exams/domain/repos/auth_repo.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../api/model/request/register_request_model.dart';
+import '../../core/api_result/api_result.dart';
 import '../model/register_model.dart';
 
 @injectable
@@ -9,23 +11,9 @@ class RegisterUseCase {
 
   RegisterUseCase(this._authRepo);
 
-  Future<RegisterModel> call(
-    String username,
-    String firstName,
-    String lastName,
-    String email,
-    String password,
-    String rePassword,
-    String phone,
-  ) {
-    return _authRepo.register(
-      username,
-      firstName,
-      lastName,
-      email,
-      password,
-      rePassword,
-      phone,
-    );
+  Future<ApiResult<RegisterModel>> call({
+    required RegisterRequestModel registerRequestModel,
+  }) {
+    return _authRepo.register(registerRequestModel: registerRequestModel);
   }
 }

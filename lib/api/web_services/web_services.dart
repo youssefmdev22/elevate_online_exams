@@ -6,6 +6,8 @@ import 'package:injectable/injectable.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../model/request/register_request_model.dart';
+
 part 'web_services.g.dart';
 
 @RestApi()
@@ -14,7 +16,7 @@ abstract class WebServices {
   factory WebServices(Dio dio, {String? baseUrl}) = _WebServices;
 
   @POST("api/v1/auth/signup")
-  Future<RegisterResponse> register(@Body() Map<String, dynamic> body);
+  Future<RegisterResponse> register(@Body() RegisterRequestModel registerRequestModel);
 
   @POST(EndPoints.login)
   Future<LoginResponse> login(@Body() LoginRequestModel loginRequestModel);

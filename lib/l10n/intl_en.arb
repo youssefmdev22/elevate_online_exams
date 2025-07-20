@@ -74,5 +74,14 @@
   "emailIsRequired": "email is required",
   "enterValidEmail": "enter valid email",
   "loginFailed": "Login Failed",
-  "close": "Close"
+  "close": "Close",
+  "ok": "Ok",
+  "no": "No",
+  "yes": "Yes",
+  "loading": "Loading...",
+  "register": "Register",
+  "success": "Success",
+  "error": "Error",
+  "accountCreatedSuccessfully": "Account created successfully",
+  "enterPhoneNumber": "Enter phone number"
 }

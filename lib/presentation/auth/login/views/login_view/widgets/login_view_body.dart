@@ -1,5 +1,5 @@
 import 'package:elevate_online_exams/core/resources/app_colors.dart';
-import 'package:elevate_online_exams/core/resources/app_theme.dart';
+import 'package:elevate_online_exams/core/resources/style_manager.dart';
 import 'package:elevate_online_exams/core/route_generator/routes.dart';
 import 'package:elevate_online_exams/l10n/get_translations.dart';
 import 'package:elevate_online_exams/presentation/auth/login/view_models/login_view_model/login_view_model.dart';
@@ -9,8 +9,11 @@ import 'package:elevate_online_exams/presentation/auth/login/views/login_view/wi
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../core/resources/font_manager.dart';
+
 class LoginViewBody extends StatefulWidget {
   final LoginViewModel loginViewModel;
+
   const LoginViewBody({super.key, required this.loginViewModel});
 
   @override
@@ -22,7 +25,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   void initState() {
     super.initState();
     widget.loginViewModel.loadSavedUserCredentials().then((result) {
-      if(result.isRemembered){
+      if (result.isRemembered) {
         setState(() {
           isCheckedRememberMe = true;
         });
@@ -49,6 +52,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
 
   bool isCheckedRememberMe = false;
   bool isFormValid = true;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -89,10 +93,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     ),
                     Text(
                       getTranslations(context).rememberMe,
-                      style: AppTheme.getInterTextStyle(
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: getRegularStyle(fontSize: FontSize.s12),
                     ),
                   ],
                 ),
@@ -102,9 +103,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   },
                   child: Text(
                     getTranslations(context).forgetPasswordQuestion,
-                    style: AppTheme.getInterTextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w400,
+                    style: getRegularStyle(
+                      fontSize: FontSize.s12,
                     ).copyWith(decoration: TextDecoration.underline),
                   ),
                 ),

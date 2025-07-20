@@ -1,5 +1,6 @@
 import 'package:elevate_online_exams/core/resources/app_theme.dart';
 import 'package:elevate_online_exams/core/app/app_validators.dart';
+import 'package:elevate_online_exams/core/resources/style_manager.dart';
 import 'package:elevate_online_exams/l10n/get_translations.dart';
 import 'package:elevate_online_exams/presentation/auth/login/view_models/login_view_model/login_view_model.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class LoginForm extends StatelessWidget {
         children: [
           TextFormField(
             controller: loginViewModel.emailController,
-            style: AppTheme.getInterTextStyle(fontSize: 14),
+            style: getRegularStyle(),
             validator: AppValidators.validateEmail,
             decoration: InputDecoration(
               labelText: getTranslations(context).email,
@@ -28,7 +29,7 @@ class LoginForm extends StatelessWidget {
           TextFormField(
             controller: loginViewModel.passwordController,
             obscureText: true,
-            style: AppTheme.getInterTextStyle(fontSize: 14),
+            style: getRegularStyle(),
             validator: AppValidators.validatePassword,
             decoration: InputDecoration(
               labelText: getTranslations(context).password,

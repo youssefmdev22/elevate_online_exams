@@ -28,6 +28,8 @@ import '../../domain/usecase/login_use_case.dart' as _i683;
 import '../../domain/usecase/register_use_case.dart' as _i717;
 import '../../presentation/auth/login/view_models/login_view_model/login_view_model.dart'
     as _i752;
+import '../../presentation/auth/register/view_models/register_view_model/register_view_model.dart'
+    as _i199;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -70,6 +72,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i156.LoadSavedUserCredentialsUseCase>(
       () => _i156.LoadSavedUserCredentialsUseCase(gh<_i595.AuthRepo>()),
+    );
+    gh.factory<_i199.RegisterViewModel>(
+      () => _i199.RegisterViewModel(gh<_i717.RegisterUseCase>()),
     );
     gh.factory<_i752.LoginViewModel>(
       () => _i752.LoginViewModel(

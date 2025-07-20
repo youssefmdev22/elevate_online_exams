@@ -1,7 +1,7 @@
 import 'package:elevate_online_exams/core/resources/app_colors.dart';
+import 'package:elevate_online_exams/core/resources/style_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppTheme {
   static ThemeData lightTheme = ThemeData(
@@ -16,21 +16,17 @@ abstract class AppTheme {
       surface: AppColors.white,
       onSurface: AppColors.blue,
     ),
-    textTheme: TextTheme(
-      bodyLarge: getRobotoTextStyle(
-        fontSize: 24.sp,
-        fontWeight: FontWeight.bold,
-      ),
-      bodyMedium: getInterTextStyle(fontSize: 16.sp),
-      bodySmall: getInterTextStyle(fontSize: 14.sp),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.white,
+      titleTextStyle: getSemiBoldStyle(color: AppColors.black),
+      iconTheme: IconThemeData(color: AppColors.black),
     ),
     inputDecorationTheme: InputDecorationTheme(
-    
       filled: true,
       fillColor: AppColors.white,
-      hintStyle: getInterTextStyle(fontSize: 14.sp, color: AppColors.gray),
-      labelStyle: getInterTextStyle(fontSize: 14.sp, color: AppColors.black),
-      errorStyle: getInterTextStyle(fontSize: 14.sp, color: AppColors.red),
+      hintStyle: getRegularStyle(color: AppColors.gray),
+      labelStyle: getRegularStyle(),
+      errorStyle: getRegularStyle(color: AppColors.red),
       border: getOutlineInputBorder(AppColors.gray),
       focusedBorder: getOutlineInputBorder(AppColors.gray),
       enabledBorder: getOutlineInputBorder(AppColors.gray),
@@ -41,7 +37,7 @@ abstract class AppTheme {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.blue,
         disabledBackgroundColor: AppColors.gray,
-        textStyle: getInterTextStyle(fontSize: 16.sp, color: AppColors.white),
+        textStyle: getMediumStyle(color: AppColors.white),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
       ),
     ),
@@ -51,30 +47,6 @@ abstract class AppTheme {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(4.r),
       borderSide: BorderSide(color: color, width: 1.w),
-    );
-  }
-
-  static TextStyle getInterTextStyle({
-    Color? color,
-    double? fontSize,
-    FontWeight? fontWeight,
-  }) {
-    return GoogleFonts.inter(
-      color: color ?? AppColors.black,
-      fontSize: fontSize ?? 18.sp,
-      fontWeight: fontWeight ?? FontWeight.normal,
-    );
-  }
-
-  static TextStyle getRobotoTextStyle({
-    Color? color,
-    double? fontSize,
-    FontWeight? fontWeight,
-  }) {
-    return GoogleFonts.inter(
-      color: color ?? AppColors.black,
-      fontSize: fontSize ?? 18.sp,
-      fontWeight: fontWeight ?? FontWeight.normal,
     );
   }
 }

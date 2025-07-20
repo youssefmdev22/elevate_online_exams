@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accountCreatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Account created successfully",
+    ),
     "algebra": MessageLookupByLibrary.simpleMessage("Algebra"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? Login",
@@ -57,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterFirstName": MessageLookupByLibrary.simpleMessage("Enter first name"),
     "enterLastName": MessageLookupByLibrary.simpleMessage("Enter last name"),
     "enterPassword": MessageLookupByLibrary.simpleMessage("Enter password"),
+    "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "Enter phone number",
+    ),
     "enterUserName": MessageLookupByLibrary.simpleMessage(
       "Enter your user name",
     ),
@@ -70,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourPassword": MessageLookupByLibrary.simpleMessage(
       "Enter your password",
     ),
+    "error": MessageLookupByLibrary.simpleMessage("Error"),
     "exam": MessageLookupByLibrary.simpleMessage("Exam"),
     "examScore": MessageLookupByLibrary.simpleMessage("Exam score"),
     "explore": MessageLookupByLibrary.simpleMessage("Explore"),
@@ -90,17 +97,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "languages": MessageLookupByLibrary.simpleMessage("Languages"),
     "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "math": MessageLookupByLibrary.simpleMessage("Math"),
     "newPassword": MessageLookupByLibrary.simpleMessage("New password"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "no": MessageLookupByLibrary.simpleMessage("No"),
     "noAccountSignup": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Sign up",
     ),
     "notHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
+    "ok": MessageLookupByLibrary.simpleMessage("Ok"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordIsRequired": MessageLookupByLibrary.simpleMessage(
       "password is required",
@@ -114,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "questionXofX": MessageLookupByLibrary.simpleMessage("Question X of X"),
+    "register": MessageLookupByLibrary.simpleMessage("Register"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "resendCode": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive code? Resend",
@@ -130,11 +141,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
     "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startAgain": MessageLookupByLibrary.simpleMessage("Start again"),
+    "success": MessageLookupByLibrary.simpleMessage("Success"),
     "thirtyMinutes": MessageLookupByLibrary.simpleMessage("30 Minutes"),
     "timeOut": MessageLookupByLibrary.simpleMessage("Time out !!"),
     "twentyQuestions": MessageLookupByLibrary.simpleMessage("20 Question"),
     "update": MessageLookupByLibrary.simpleMessage("Update"),
     "userName": MessageLookupByLibrary.simpleMessage("User name"),
+    "yes": MessageLookupByLibrary.simpleMessage("Yes"),
     "yourScore": MessageLookupByLibrary.simpleMessage("Your score"),
   };
 }
