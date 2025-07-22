@@ -6,7 +6,7 @@ import 'package:elevate_online_exams/domain/model/register_model.dart';
 
 import '../../api/model/request/register_request_model.dart';
 
-abstract class AuthRepo {
+abstract interface class AuthRepo {
   Future<ApiResult<RegisterModel>> register({
     required RegisterRequestModel registerRequestModel,
   });

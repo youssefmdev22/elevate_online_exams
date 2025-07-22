@@ -15,7 +15,7 @@ class AuthRepoImpl implements AuthRepo {
   final AuthOnlineDataSource _authOnlineDataSource;
   final AuthOfflineDataSource _authOfflineDataSource;
 
-  AuthRepoImpl(this._authOnlineDataSource, this._authOfflineDataSource);
+  const AuthRepoImpl(this._authOnlineDataSource, this._authOfflineDataSource);
 
   @override
   Future<ApiResult<RegisterModel>> register({

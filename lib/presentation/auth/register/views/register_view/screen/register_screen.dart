@@ -1,9 +1,6 @@
 import 'package:elevate_online_exams/core/app/app_validators.dart';
 import 'package:elevate_online_exams/core/custom_widget/custom_dialog.dart';
 import 'package:elevate_online_exams/core/di/di.dart';
-import 'package:elevate_online_exams/core/resources/font_manager.dart';
-import 'package:elevate_online_exams/core/resources/style_manager.dart';
-import 'package:elevate_online_exams/l10n/get_translations.dart';
 import 'package:elevate_online_exams/presentation/auth/register/view_models/register_view_model/register_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/resources/app_colors.dart';
 import '../../../../../../core/route_generator/routes.dart';
+import '../../../../../../generated/l10n.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -56,8 +54,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             CustomDialog.positiveButton(
               context: context,
               cancelable: false,
-              title: getTranslations(context).success,
-              message: getTranslations(context).accountCreatedSuccessfully,
+              title: AppLocalizations.of(context).success,
+              message: AppLocalizations.of(context).accountCreatedSuccessfully,
               positiveOnClick: () {
                 Navigator.pushNamedAndRemoveUntil(
                   context,
@@ -74,7 +72,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             }
             CustomDialog.positiveButton(
               context: context,
-              title: getTranslations(context).error,
+              title: AppLocalizations.of(context).error,
               message: state.errorMessage,
             );
             break;
@@ -88,7 +86,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             },
             icon: Icon(Icons.arrow_back_ios),
           ),
-          title: Text(getTranslations(context).register),
+          title: Text(AppLocalizations.of(context).register),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -102,8 +100,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   buildTextFormField(
                     controller: _registerViewModel.usernameController,
-                    label: getTranslations(context).userName,
-                    hint: getTranslations(context).enterUserName,
+                    label: AppLocalizations.of(context).userName,
+                    hint: AppLocalizations.of(context).enterUserName,
                     validator: AppValidators.validateUsername,
                   ),
                   Row(
@@ -113,16 +111,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Expanded(
                         child: buildTextFormField(
                           controller: _registerViewModel.firstNameController,
-                          label: getTranslations(context).firstName,
-                          hint: getTranslations(context).enterFirstName,
+                          label: AppLocalizations.of(context).firstName,
+                          hint: AppLocalizations.of(context).enterFirstName,
                           validator: AppValidators.validateFullName,
                         ),
                       ),
                       Expanded(
                         child: buildTextFormField(
                           controller: _registerViewModel.lastNameController,
-                          label: getTranslations(context).lastName,
-                          hint: getTranslations(context).enterLastName,
+                          label: AppLocalizations.of(context).lastName,
+                          hint: AppLocalizations.of(context).enterLastName,
                           validator: AppValidators.validateFullName,
                         ),
                       ),
@@ -130,8 +128,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   buildTextFormField(
                     controller: _registerViewModel.emailController,
-                    label: getTranslations(context).email,
-                    hint: getTranslations(context).enterYourEmail,
+                    label: AppLocalizations.of(context).email,
+                    hint: AppLocalizations.of(context).enterYourEmail,
                     validator: AppValidators.validateEmail,
                     keyboardType: TextInputType.emailAddress,
                   ),
@@ -143,8 +141,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: buildTextFormField(
                           obscureText: true,
                           controller: _registerViewModel.passwordController,
-                          label: getTranslations(context).password,
-                          hint: getTranslations(context).enterPassword,
+                          label: AppLocalizations.of(context).password,
+                          hint: AppLocalizations.of(context).enterPassword,
                           validator: AppValidators.validatePassword,
                         ),
                       ),
@@ -152,21 +150,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: buildTextFormField(
                           obscureText: true,
                           controller: _registerViewModel.rePasswordController,
-                          label: getTranslations(context).confirmPassword,
-                          hint: getTranslations(context).confirmPassword,
+                          label: AppLocalizations.of(context).confirmPassword,
+                          hint: AppLocalizations.of(context).confirmPassword,
                           validator: (text) {
-                            if (text == null || text.isEmpty) {
-                              return getTranslations(
-                                context,
-                              ).passwordIsRequired;
-                            }
-                            if (text !=
-                                _registerViewModel.passwordController.text) {
-                              return getTranslations(
-                                context,
-                              ).passwordNotMatched;
-                            }
-                            return null;
+                            return AppValidators.validateConfirmPassword(
+                              text,
+                              _registerViewModel.passwordController.text,
+                            );
                           },
                         ),
                       ),
@@ -174,8 +164,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   buildTextFormField(
                     controller: _registerViewModel.phoneController,
-                    label: getTranslations(context).phoneNumber,
-                    hint: getTranslations(context).enterPhoneNumber,
+                    label: AppLocalizations.of(context).phoneNumber,
+                    hint: AppLocalizations.of(context).enterPhoneNumber,
                     validator: AppValidators.validatePhoneNumber,
                     keyboardType: TextInputType.phone,
                     textInputAction: TextInputAction.done,
@@ -191,10 +181,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             }
                             : null,
                     child: Text(
-                      getTranslations(context).register,
-                      style: getBoldStyle(
-                        fontSize: FontSize.s16,
+                      AppLocalizations.of(context).register,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: AppColors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -223,7 +213,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       validator: validator,
       keyboardType: keyboardType ?? TextInputType.text,
       textInputAction: textInputAction ?? TextInputAction.next,
-      style: getRegularStyle(),
+      style: Theme.of(context).textTheme.bodySmall,
       onChanged: (_) {
         setState(() {
           _isButtonEnabled = true;

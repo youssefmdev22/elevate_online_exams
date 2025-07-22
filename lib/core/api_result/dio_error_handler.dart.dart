@@ -1,35 +1,36 @@
 import "package:dio/dio.dart";
+import "package:elevate_online_exams/generated/l10n.dart";
 
 String handleDioError(DioException error) {
   switch (error.type) {
     case DioExceptionType.connectionTimeout:
-      return "Connection timeout. Please try again later.";
+      return AppLocalizations().connectionTimeout;
 
     case DioExceptionType.sendTimeout:
-      return "Request timed out. Please try again.";
+      return AppLocalizations().sendTimeout;
 
     case DioExceptionType.receiveTimeout:
-      return "Server took too long to respond.";
+      return AppLocalizations().receiveTimeout;
 
     case DioExceptionType.badCertificate:
-      return "Bad certificate. Please check your device date/time.";
+      return AppLocalizations().badCertificate;
 
     case DioExceptionType.badResponse:
       return _extractErrorMessageFromResponse(error.response);
 
     case DioExceptionType.cancel:
-      return "Request was cancelled. Please retry.";
+      return AppLocalizations().dioErrorCancel;
 
     case DioExceptionType.connectionError:
-      return "Network error. Please check your internet connection.";
+      return AppLocalizations().connectionError;
 
     case DioExceptionType.unknown:
-      return "An unexpected error occurred: ${error.message ?? "Unknown"}";
+      return "${AppLocalizations().unknownError} ${error.message ?? AppLocalizations().unknown}";
   }
 }
 
 String _extractErrorMessageFromResponse(Response? response) {
-  if (response == null) return "No response received from server.";
+  if (response == null) return AppLocalizations().noResponse;
   
 
   try {
@@ -54,9 +55,9 @@ String _extractErrorMessageFromResponse(Response? response) {
       return data; // Plain text error response
     }
 
-    return "Unexpected error response from server [${response.statusCode}].";
+    return "${AppLocalizations().badResponse} [${response.statusCode}].";
   } catch (e) {
-    return "Failed to parse error response.";
+    return AppLocalizations().failedToParseResponse;
   }
 }
 

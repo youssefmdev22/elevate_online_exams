@@ -64,14 +64,14 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i397.AuthOfflineDataSource>(),
       ),
     );
+    gh.factory<_i156.LoadSavedUserCredentialsUseCase>(
+      () => _i156.LoadSavedUserCredentialsUseCase(gh<_i595.AuthRepo>()),
+    );
     gh.factory<_i683.LoginUseCase>(
       () => _i683.LoginUseCase(gh<_i595.AuthRepo>()),
     );
     gh.factory<_i717.RegisterUseCase>(
       () => _i717.RegisterUseCase(gh<_i595.AuthRepo>()),
-    );
-    gh.factory<_i156.LoadSavedUserCredentialsUseCase>(
-      () => _i156.LoadSavedUserCredentialsUseCase(gh<_i595.AuthRepo>()),
     );
     gh.factory<_i199.RegisterViewModel>(
       () => _i199.RegisterViewModel(gh<_i717.RegisterUseCase>()),

@@ -5,7 +5,7 @@ import 'package:elevate_online_exams/domain/model/login_model.dart';
 
 import '../../domain/model/register_model.dart';
 
-abstract class AuthOnlineDataSource {
+abstract interface class AuthOnlineDataSource {
   Future<ApiResult<RegisterModel>> register({
     required RegisterRequestModel registerRequestModel,
   });

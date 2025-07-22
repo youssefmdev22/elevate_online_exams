@@ -1,8 +1,7 @@
-import 'package:elevate_online_exams/core/resources/font_manager.dart';
-import 'package:elevate_online_exams/core/resources/style_manager.dart';
-import 'package:elevate_online_exams/l10n/get_translations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../../generated/l10n.dart';
 
 class CustomLoginAppbar extends StatelessWidget {
   const CustomLoginAppbar({super.key});
@@ -14,8 +13,10 @@ class CustomLoginAppbar extends StatelessWidget {
         const Icon(Icons.arrow_back_ios),
         SizedBox(width: 8.w),
         Text(
-          getTranslations(context).login,
-          style: getMediumStyle(fontSize: FontSize.s20),
+          AppLocalizations.of(context).login,
+          style: Theme.of(
+            context,
+          ).textTheme.bodyLarge,
         ),
       ],
     );

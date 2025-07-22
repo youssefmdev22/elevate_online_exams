@@ -1,3 +1,4 @@
+import 'package:elevate_online_exams/api/model/mapper/login_mapper.dart';
 import 'package:elevate_online_exams/api/model/request/login_request_model/login_request_model.dart';
 import 'package:elevate_online_exams/api/model/request/register_request_model.dart';
 import 'package:elevate_online_exams/api/web_services/web_services.dart';
@@ -11,7 +12,7 @@ import 'package:injectable/injectable.dart';
 class AuthOnlineDataSourceImpl implements AuthOnlineDataSource {
   final WebServices _webServices;
 
-  AuthOnlineDataSourceImpl(this._webServices);
+  const AuthOnlineDataSourceImpl(this._webServices);
 
   @override
   Future<ApiResult<RegisterModel>> register({
@@ -32,7 +33,9 @@ class AuthOnlineDataSourceImpl implements AuthOnlineDataSource {
     try {
       var response = await _webServices.login(loginRequestModel);
 
-      return ApiSuccessResult(response.user!.toLoginModel(response.token!));
+      return ApiSuccessResult(
+        LoginMapper.fromDto(response.user!, response.token!),
+      );
     } catch (e) {
       // if (e is DioException) {
       //   String errorMessage = handleDioError(e);

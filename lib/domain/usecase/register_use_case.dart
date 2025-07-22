@@ -9,7 +9,7 @@ import '../model/register_model.dart';
 class RegisterUseCase {
   final AuthRepo _authRepo;
 
-  RegisterUseCase(this._authRepo);
+  const RegisterUseCase(this._authRepo);
 
   Future<ApiResult<RegisterModel>> call({
     required RegisterRequestModel registerRequestModel,

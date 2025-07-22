@@ -1,7 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 
 import '../../../../../api/model/request/register_request_model.dart';
 import '../../../../../core/api_result/api_result.dart';
@@ -37,7 +36,7 @@ class RegisterViewModel extends Cubit<RegisterState> {
           password: passwordController.text,
           rePassword: rePasswordController.text,
           phone: phoneController.text,
-        )
+        ),
       );
       switch (response) {
         case ApiSuccessResult<RegisterModel>():

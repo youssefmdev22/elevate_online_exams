@@ -9,7 +9,7 @@ import 'package:injectable/injectable.dart';
 @injectable
 class LoginUseCase {
   final AuthRepo _authRepo;
-  LoginUseCase(this._authRepo);
+  const LoginUseCase(this._authRepo);
 
 Future<ApiResult<LoginModel>> call(LoginRequestModel loginRequestModel, {required bool isCheckedRememberMe}) {
     return _authRepo.login(loginRequestModel, isCheckedRememberMe: isCheckedRememberMe);

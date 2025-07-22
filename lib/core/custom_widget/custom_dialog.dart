@@ -2,9 +2,7 @@ import 'package:elevate_online_exams/core/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../l10n/get_translations.dart';
-import '../resources/font_manager.dart';
-import '../resources/style_manager.dart';
+import '../../generated/l10n.dart';
 
 class CustomDialog {
   final BuildContext context;
@@ -28,8 +26,8 @@ class CustomDialog {
             children: [
               const CircularProgressIndicator(),
               Text(
-                message ?? getTranslations(ctx).loading,
-                style: getSemiBoldStyle(),
+                message ?? AppLocalizations.of(ctx).loading,
+                style: Theme.of(ctx).textTheme.bodyLarge,
               ),
             ],
           ),
@@ -51,13 +49,13 @@ class CustomDialog {
       barrierDismissible: cancelable,
       builder: (ctx) {
         return AlertDialog(
-          title: Text(title ?? "", style: getBoldStyle()),
+          title: Text(title ?? ""),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             spacing: 20.h,
             children: [
-              Text(message ?? "", style: getSemiBoldStyle()),
+              Text(message ?? ""),
               ElevatedButton(
                 onPressed: () {
                   if (positiveOnClick != null) {
@@ -67,10 +65,10 @@ class CustomDialog {
                   }
                 },
                 child: Text(
-                  positiveText ?? getTranslations(ctx).ok,
-                  style: getBoldStyle(
-                    fontSize: FontSize.s16,
+                  positiveText ?? AppLocalizations.of(ctx).ok,
+                  style: Theme.of(ctx).textTheme.bodyMedium?.copyWith(
                     color: AppColors.white,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -96,13 +94,13 @@ class CustomDialog {
       barrierDismissible: cancelable,
       builder: (ctx) {
         return AlertDialog(
-          title: Text(title ?? "", style: getBoldStyle()),
+          title: Text(title ?? ""),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             spacing: 20.h,
             children: [
-              Text(message ?? "", style: getSemiBoldStyle()),
+              Text(message ?? ""),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 spacing: 16.w,
@@ -120,10 +118,10 @@ class CustomDialog {
                         }
                       },
                       child: Text(
-                        negativeText ?? getTranslations(ctx).no,
-                        style: getBoldStyle(
-                          fontSize: FontSize.s16,
+                        negativeText ?? AppLocalizations.of(ctx).no,
+                        style: Theme.of(ctx).textTheme.bodyMedium?.copyWith(
                           color: AppColors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
@@ -138,10 +136,10 @@ class CustomDialog {
                         }
                       },
                       child: Text(
-                        positiveText ?? getTranslations(ctx).yes,
-                        style: getBoldStyle(
-                          fontSize: FontSize.s16,
+                        positiveText ?? AppLocalizations.of(ctx).yes,
+                        style: Theme.of(ctx).textTheme.bodyMedium?.copyWith(
                           color: AppColors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
