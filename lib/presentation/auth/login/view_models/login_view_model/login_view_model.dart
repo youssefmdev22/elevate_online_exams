@@ -1,8 +1,6 @@
 import 'package:elevate_online_exams/api/model/request/login_request_model/login_request_model.dart';
 import 'package:elevate_online_exams/api/model/saved_user_credentials_model.dart';
 import 'package:elevate_online_exams/core/api_result/api_result.dart';
-import 'package:elevate_online_exams/core/app/constants.dart';
-import 'package:elevate_online_exams/core/app/shared_prefs.dart';
 import 'package:elevate_online_exams/domain/model/login_model.dart';
 import 'package:elevate_online_exams/domain/usecase/load_saved_user_credentials_use_case.dart';
 import 'package:elevate_online_exams/domain/usecase/login_use_case.dart';
@@ -45,7 +43,6 @@ class LoginViewModel extends Cubit<LoginState> {
       switch (result) {
         case ApiSuccessResult<LoginModel>():
           emit(LoginStateSuccess(loginModel: result.data));
-          SharedPrefs.saveData(Constants.tokenKey, result.data.token);
         case ApiErrorResult<LoginModel>():
           emit(LoginStateFailure(errorMessage: result.errorMessage));
       }

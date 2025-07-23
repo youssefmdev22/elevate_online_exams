@@ -1,6 +1,7 @@
 import 'package:elevate_online_exams/api/model/request/login_request_model/login_request_model.dart';
 import 'package:elevate_online_exams/api/model/response/login_response.dart';
 import 'package:elevate_online_exams/api/model/response/register_response.dart';
+import 'package:elevate_online_exams/api/model/response/subject_response/subject_response.dart';
 import 'package:elevate_online_exams/core/app/end_points.dart';
 import 'package:injectable/injectable.dart';
 import 'package:dio/dio.dart';
@@ -20,4 +21,7 @@ abstract class WebServices {
 
   @POST(EndPoints.login)
   Future<LoginResponse> login(@Body() LoginRequestModel loginRequestModel);
+
+  @GET(EndPoints.subjects)
+  Future<SubjectResponse> getAllSubjects();
 }

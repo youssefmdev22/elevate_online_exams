@@ -28,10 +28,9 @@ class AppLocalizations {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<AppLocalizations> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -828,6 +827,36 @@ class AppLocalizations {
   /// `Unknown`
   String get unknown {
     return Intl.message('Unknown', name: 'unknown', desc: '', args: []);
+  }
+
+  /// `No subjects found`
+  String get noSubjectsFound {
+    return Intl.message(
+      'No subjects found',
+      name: 'noSubjectsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Survey`
+  String get survey {
+    return Intl.message('Survey', name: 'survey', desc: '', args: []);
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `Browse by subject`
+  String get browseBySubject {
+    return Intl.message(
+      'Browse by subject',
+      name: 'browseBySubject',
+      desc: '',
+      args: [],
+    );
   }
 }
 

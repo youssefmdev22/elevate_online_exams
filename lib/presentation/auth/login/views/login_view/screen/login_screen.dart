@@ -26,6 +26,7 @@ class LoginScreen extends StatelessWidget {
           Navigator.of(context).pop();
           showDialog(
             context: context,
+            barrierDismissible: false,
             builder: (_) {
               return AlertDialog(
                 title: Text(AppLocalizations.of(context).loginFailed),

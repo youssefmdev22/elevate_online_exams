@@ -38,6 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "badResponse": MessageLookupByLibrary.simpleMessage(
       "Unexpected error response from server",
     ),
+    "browseBySubject": MessageLookupByLibrary.simpleMessage(
+      "Browse by subject",
+    ),
     "change": MessageLookupByLibrary.simpleMessage("Change"),
     "close": MessageLookupByLibrary.simpleMessage("Close"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm password"),
@@ -137,6 +140,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noResponse": MessageLookupByLibrary.simpleMessage(
       "No response received from server.",
     ),
+    "noSubjectsFound": MessageLookupByLibrary.simpleMessage(
+      "No subjects found",
+    ),
     "notHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
@@ -165,6 +171,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
     "result": MessageLookupByLibrary.simpleMessage("Result"),
     "results": MessageLookupByLibrary.simpleMessage("Results"),
+    "search": MessageLookupByLibrary.simpleMessage("Search"),
     "selectCorrectSentence": MessageLookupByLibrary.simpleMessage(
       "Select the correctly punctuated sentence.",
     ),
@@ -178,6 +185,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startAgain": MessageLookupByLibrary.simpleMessage("Start again"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
+    "survey": MessageLookupByLibrary.simpleMessage("Survey"),
     "thirtyMinutes": MessageLookupByLibrary.simpleMessage("30 Minutes"),
     "thisFieldIsRequired": MessageLookupByLibrary.simpleMessage(
       "This field is required",
