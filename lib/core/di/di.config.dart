@@ -16,20 +16,26 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart' as _i528;
 
 import '../../api/datasource/auth_offline_data_source_impl.dart' as _i622;
 import '../../api/datasource/auth_online_data_source_impl.dart' as _i281;
+import '../../api/datasource/subject_exams_remote_data_source_impl.dart'
+    as _i76;
 import '../../api/datasource/subject_remote_data_source_impl.dart' as _i886;
 import '../../api/web_services/di.dart' as _i1003;
 import '../../api/web_services/web_services.dart' as _i99;
 import '../../data/datasource/auth_offline_data_source.dart' as _i397;
 import '../../data/datasource/auth_online_data_source.dart' as _i151;
+import '../../data/datasource/subject_exams_remote_data_source.dart' as _i135;
 import '../../data/datasource/subject_remote_data_source.dart' as _i458;
 import '../../data/repos/auth_repo_impl.dart' as _i666;
+import '../../data/repos/subject_exams_repo_impl.dart' as _i398;
 import '../../data/repos/subject_repo_impl.dart' as _i1071;
 import '../../domain/repos/auth_repo.dart' as _i595;
+import '../../domain/repos/subject_exams_repo.dart' as _i259;
 import '../../domain/repos/subject_repo.dart' as _i462;
 import '../../domain/usecase/load_saved_user_credentials_use_case.dart'
     as _i156;
 import '../../domain/usecase/login_use_case.dart' as _i683;
 import '../../domain/usecase/register_use_case.dart' as _i717;
+import '../../domain/usecase/subject_exams_use_case.dart' as _i678;
 import '../../domain/usecase/subject_use_case.dart' as _i190;
 import '../../presentation/auth/login/view_models/login_view_model/login_view_model.dart'
     as _i752;
@@ -39,6 +45,8 @@ import '../../presentation/home/view_models/home_view_model/home_view_model.dart
     as _i444;
 import '../../presentation/home/views/pages/explore_page/view_models/subject_view_model.dart'
     as _i703;
+import '../../presentation/subject_exams/view_models/subject_exams_view_model.dart'
+    as _i506;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -68,6 +76,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i458.SubjectRemoteDataSource>(
       () => _i886.SubjectRemoteDataSourceImpl(gh<_i99.WebServices>()),
     );
+    gh.factory<_i135.SubjectExamsRemoteDataSource>(
+      () => _i76.SubjectExamsRemoteDataSourceImpl(gh<_i99.WebServices>()),
+    );
     gh.factory<_i151.AuthOnlineDataSource>(
       () => _i281.AuthOnlineDataSourceImpl(gh<_i99.WebServices>()),
     );
@@ -95,11 +106,21 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i190.SubjectUseCase>(
       () => _i190.SubjectUseCase(gh<_i462.SubjectRepo>()),
     );
+    gh.factory<_i259.SubjectExamsRepo>(
+      () =>
+          _i398.SubjectExamsRepoImpl(gh<_i135.SubjectExamsRemoteDataSource>()),
+    );
     gh.factory<_i752.LoginViewModel>(
       () => _i752.LoginViewModel(
         gh<_i683.LoginUseCase>(),
         gh<_i156.LoadSavedUserCredentialsUseCase>(),
       ),
+    );
+    gh.factory<_i678.SubjectExamsUseCase>(
+      () => _i678.SubjectExamsUseCase(gh<_i259.SubjectExamsRepo>()),
+    );
+    gh.factory<_i506.SubjectExamsViewModel>(
+      () => _i506.SubjectExamsViewModel(gh<_i678.SubjectExamsUseCase>()),
     );
     gh.factory<_i703.SubjectViewModel>(
       () => _i703.SubjectViewModel(gh<_i190.SubjectUseCase>()),

@@ -29,7 +29,7 @@ class SubjectRemoteDataSourceImpl implements SubjectRemoteDataSource {
         return ApiErrorResult(AppLocalizations().noSubjectsFound);
       }
     } catch (e) {
-      return ApiErrorResult(e);
+      return ApiErrorResult(e.toString());
     }
   }
 }

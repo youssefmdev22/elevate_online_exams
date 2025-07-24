@@ -116,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPasswordQuestion": MessageLookupByLibrary.simpleMessage(
       "Forget password?",
     ),
+    "from": MessageLookupByLibrary.simpleMessage("From:"),
     "highLevel": MessageLookupByLibrary.simpleMessage("High level"),
     "incorrect": MessageLookupByLibrary.simpleMessage("Incorrect"),
     "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
@@ -130,12 +131,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
+    "loremIpsumDolorSitAmetConsectetur": MessageLookupByLibrary.simpleMessage(
+      "• Lorem ipsum dolor sit amet consectetur.",
+    ),
     "math": MessageLookupByLibrary.simpleMessage("Math"),
+    "minutes": MessageLookupByLibrary.simpleMessage("Minutes"),
     "newPassword": MessageLookupByLibrary.simpleMessage("New password"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "noAccountSignup": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Sign up",
+    ),
+    "noExamsFoundForThisSubject": MessageLookupByLibrary.simpleMessage(
+      "No exams found for this subject",
     ),
     "noResponse": MessageLookupByLibrary.simpleMessage(
       "No response received from server.",
@@ -159,6 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "question": MessageLookupByLibrary.simpleMessage("Question"),
     "questionXofX": MessageLookupByLibrary.simpleMessage("Question X of X"),
     "receiveTimeout": MessageLookupByLibrary.simpleMessage(
       "Server took too long to respond.",
@@ -191,6 +200,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "This field is required",
     ),
     "timeOut": MessageLookupByLibrary.simpleMessage("Time out !!"),
+    "to": MessageLookupByLibrary.simpleMessage("To:"),
     "twentyQuestions": MessageLookupByLibrary.simpleMessage("20 Question"),
     "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
     "unknownError": MessageLookupByLibrary.simpleMessage(

@@ -102,5 +102,11 @@
   "noSubjectsFound": "No subjects found",
   "survey": "Survey",
   "search": "Search",
-  "browseBySubject": "Browse by subject"
+  "browseBySubject": "Browse by subject",
+  "noExamsFoundForThisSubject": "No exams found for this subject",
+  "question": "Question",
+  "minutes": "Minutes",
+  "from": "From:",
+  "to": "To:",
+  "loremIpsumDolorSitAmetConsectetur": "• Lorem ipsum dolor sit amet consectetur."
 }

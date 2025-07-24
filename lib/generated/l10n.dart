@@ -858,6 +858,46 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `No exams found for this subject`
+  String get noExamsFoundForThisSubject {
+    return Intl.message(
+      'No exams found for this subject',
+      name: 'noExamsFoundForThisSubject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Question`
+  String get question {
+    return Intl.message('Question', name: 'question', desc: '', args: []);
+  }
+
+  /// `Minutes`
+  String get minutes {
+    return Intl.message('Minutes', name: 'minutes', desc: '', args: []);
+  }
+
+  /// `From:`
+  String get from {
+    return Intl.message('From:', name: 'from', desc: '', args: []);
+  }
+
+  /// `To:`
+  String get to {
+    return Intl.message('To:', name: 'to', desc: '', args: []);
+  }
+
+  /// `• Lorem ipsum dolor sit amet consectetur.`
+  String get loremIpsumDolorSitAmetConsectetur {
+    return Intl.message(
+      '• Lorem ipsum dolor sit amet consectetur.',
+      name: 'loremIpsumDolorSitAmetConsectetur',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
