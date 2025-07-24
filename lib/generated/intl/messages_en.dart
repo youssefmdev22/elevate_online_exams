@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "appName": MessageLookupByLibrary.simpleMessage("Online Exams"),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
     "change": MessageLookupByLibrary.simpleMessage("Change"),
+    "close": MessageLookupByLibrary.simpleMessage("Close"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm password"),
     "correct": MessageLookupByLibrary.simpleMessage("Correct"),
     "correctedAnswersInfo": MessageLookupByLibrary.simpleMessage(
@@ -39,6 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "done": MessageLookupByLibrary.simpleMessage("Done"),
     "editProfile": MessageLookupByLibrary.simpleMessage("Edit profile"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "emailIsRequired": MessageLookupByLibrary.simpleMessage(
+      "email is required",
+    ),
     "emailNotValid": MessageLookupByLibrary.simpleMessage(
       "This Email is not valid",
     ),
@@ -55,6 +59,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterPassword": MessageLookupByLibrary.simpleMessage("Enter password"),
     "enterUserName": MessageLookupByLibrary.simpleMessage(
       "Enter your user name",
+    ),
+    "enterValidEmail": MessageLookupByLibrary.simpleMessage(
+      "enter valid email",
     ),
     "enterVerificationCode": MessageLookupByLibrary.simpleMessage(
       "Please enter your code that send to your email address",
@@ -84,13 +91,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "languages": MessageLookupByLibrary.simpleMessage("Languages"),
     "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "math": MessageLookupByLibrary.simpleMessage("Math"),
     "newPassword": MessageLookupByLibrary.simpleMessage("New password"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "noAccountSignup": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Sign up",
     ),
+    "notHaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account? ",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordIsRequired": MessageLookupByLibrary.simpleMessage(
+      "password is required",
+    ),
     "passwordNotMatched": MessageLookupByLibrary.simpleMessage(
       "Password not matched",
     ),

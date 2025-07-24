@@ -68,5 +68,11 @@
   "login": "Login",
   "rememberMe": "Remember me",
   "forgetPasswordQuestion": "Forget password?",
-  "noAccountSignup": "Don't have an account? Sign up"
+  "noAccountSignup": "Don't have an account? Sign up",
+  "notHaveAnAccount": "Don't have an account? ",
+  "passwordIsRequired": "password is required",
+  "emailIsRequired": "email is required",
+  "enterValidEmail": "enter valid email",
+  "loginFailed": "Login Failed",
+  "close": "Close"
 }

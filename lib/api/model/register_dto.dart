@@ -20,7 +20,7 @@ class RegisterDTO {
   @JsonKey(name: "isVerified")
   final bool? isVerified;
   @JsonKey(name: "_id")
-  final String? Id;
+  final String? id;
   @JsonKey(name: "createdAt")
   final String? createdAt;
 
@@ -32,7 +32,7 @@ class RegisterDTO {
     this.phone,
     this.role,
     this.isVerified,
-    this.Id,
+    this.id,
     this.createdAt,
   });
 
@@ -53,7 +53,7 @@ class RegisterDTO {
       phone: phone,
       role: role,
       isVerified: isVerified,
-      Id: Id,
+      id: id,
       createdAt: createdAt,
     );
   }

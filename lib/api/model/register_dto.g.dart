@@ -14,7 +14,7 @@ RegisterDTO _$RegisterDTOFromJson(Map<String, dynamic> json) => RegisterDTO(
   phone: json['phone'] as String?,
   role: json['role'] as String?,
   isVerified: json['isVerified'] as bool?,
-  Id: json['_id'] as String?,
+  id: json['_id'] as String?,
   createdAt: json['createdAt'] as String?,
 );
 
@@ -27,6 +27,6 @@ Map<String, dynamic> _$RegisterDTOToJson(RegisterDTO instance) =>
       'phone': instance.phone,
       'role': instance.role,
       'isVerified': instance.isVerified,
-      '_id': instance.Id,
+      '_id': instance.id,
       'createdAt': instance.createdAt,
     };
