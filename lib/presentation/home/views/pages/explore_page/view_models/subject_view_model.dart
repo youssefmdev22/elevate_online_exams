@@ -10,14 +10,32 @@ class SubjectViewModel extends Cubit<SubjectState> {
   final SubjectUseCase _subjectUseCase;
   SubjectViewModel(this._subjectUseCase) : super(SubjectStateInitial());
 
+  List<SubjectModel> allSubjects = [];
+
   Future<void> getAllSubjects() async {
     emit(SubjectStateLoading());
     var result = await _subjectUseCase.call();
-    switch(result){
+    switch (result) {
       case ApiSuccessResult<List<SubjectModel>>():
-        emit(SubjectStateSuccess(subjects: result.data));
+        allSubjects = result.data;
+        emit(SubjectStateSuccess(subjects: allSubjects));
       case ApiErrorResult<List<SubjectModel>>():
         emit(SubjectStateFailure(errorMessage: result.errorMessage));
+    }
+  }
+
+  void filterSubjects(String keyword) {
+    if (keyword.isEmpty) {
+      emit(SubjectStateSuccess(subjects: allSubjects));
+    } else {
+      final filteredSubjects =
+          allSubjects
+              .where(
+                (subject) =>
+                    subject.name!.toLowerCase().contains(keyword.toLowerCase()),
+              )
+              .toList();
+      emit(SubjectStateSuccess(subjects: filteredSubjects));
     }
   }
 }

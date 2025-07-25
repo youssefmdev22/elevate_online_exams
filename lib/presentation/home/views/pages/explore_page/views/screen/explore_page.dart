@@ -35,7 +35,7 @@ class ExplorePage extends StatelessWidget {
         SizedBox(height: 16.h),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: SearchTextFormField(),
+          child: SearchTextFormField(subjectViewModel: subjectViewModel,),
         ),
         SizedBox(height: 40.h),
         Padding(

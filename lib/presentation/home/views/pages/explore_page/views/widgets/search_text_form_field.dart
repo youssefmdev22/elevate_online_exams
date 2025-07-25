@@ -1,15 +1,17 @@
 import 'package:elevate_online_exams/core/resources/app_colors.dart';
 import 'package:elevate_online_exams/generated/l10n.dart';
+import 'package:elevate_online_exams/presentation/home/views/pages/explore_page/view_models/subject_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchTextFormField extends StatelessWidget {
-  SearchTextFormField({super.key});
-  final TextEditingController searchController = TextEditingController();
+  final SubjectViewModel subjectViewModel;
+  const SearchTextFormField({super.key, required this.subjectViewModel});
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: searchController,
+      onChanged: subjectViewModel.filterSubjects,
       style: Theme.of(context).textTheme.bodySmall,
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.search, color: AppColors.gray, size: 24),
