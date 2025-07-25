@@ -18,12 +18,14 @@ class _WebServices implements WebServices {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<RegisterResponse> register(Map<String, dynamic> body) async {
+  Future<RegisterResponse> register(
+    RegisterRequestModel registerRequestModel,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(body);
+    _data.addAll(registerRequestModel.toJson());
     final _options = _setStreamType<RegisterResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -66,6 +68,33 @@ class _WebServices implements WebServices {
     late LoginResponse _value;
     try {
       _value = LoginResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<SubjectResponse> getAllSubjects() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubjectResponse>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'api/v1/subjects',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubjectResponse _value;
+    try {
+      _value = SubjectResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

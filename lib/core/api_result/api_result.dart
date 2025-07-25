@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:elevate_online_exams/core/api_result/dio_error_handler.dart.dart';
 
+
 sealed class ApiResult<T> {}
 
 class ApiSuccessResult<T> extends ApiResult<T> {

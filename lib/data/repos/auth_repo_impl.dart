@@ -8,36 +8,29 @@ import 'package:elevate_online_exams/domain/model/register_model.dart';
 import 'package:elevate_online_exams/domain/repos/auth_repo.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../api/model/request/register_request_model.dart';
+
 @Injectable(as: AuthRepo)
 class AuthRepoImpl implements AuthRepo {
   final AuthOnlineDataSource _authOnlineDataSource;
   final AuthOfflineDataSource _authOfflineDataSource;
 
-  AuthRepoImpl(this._authOnlineDataSource, this._authOfflineDataSource);
+  const AuthRepoImpl(this._authOnlineDataSource, this._authOfflineDataSource);
 
   @override
-  Future<RegisterModel> register(
-    String username,
-    String firstName,
-    String lastName,
-    String email,
-    String password,
-    String rePassword,
-    String phone,
-  ) {
+  Future<ApiResult<RegisterModel>> register({
+    required RegisterRequestModel registerRequestModel,
+  }) {
     return _authOnlineDataSource.register(
-      username,
-      firstName,
-      lastName,
-      email,
-      password,
-      rePassword,
-      phone,
+      registerRequestModel: registerRequestModel,
     );
   }
 
   @override
-  Future<ApiResult<LoginModel>> login(LoginRequestModel loginRequestModel, {required bool isCheckedRememberMe}) async {
+  Future<ApiResult<LoginModel>> login(
+    LoginRequestModel loginRequestModel, {
+    required bool isCheckedRememberMe,
+  }) async {
     var result = await _authOnlineDataSource.login(loginRequestModel);
     switch (result) {
       case ApiSuccessResult<LoginModel>():
@@ -59,5 +52,4 @@ class AuthRepoImpl implements AuthRepo {
   Future<SavedUserCredentialsModel> loadSavedUserCredentials() {
     return _authOfflineDataSource.loadSavedUserCredentials();
   }
-  }
-
+}

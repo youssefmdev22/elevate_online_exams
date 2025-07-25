@@ -34,12 +34,12 @@ class MyApp extends StatelessWidget {
           initialRoute: Routes.loginScreen,
           home: child,
           localizationsDelegates: [
-            S.delegate,
+            AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: S.delegate.supportedLocales,
+          supportedLocales: AppLocalizations.delegate.supportedLocales,
           locale: const Locale("en"),
         );
       },

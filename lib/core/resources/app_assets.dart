@@ -10,4 +10,7 @@ abstract class ImageAssets {
   static const String microscopeImage = "$imagePath/microscope.png";
   static const String profitImage = "$imagePath/profit.png";
   static const String sandClockImage = "$imagePath/sand_clock.png";
+  static const String exploreIcon = "$imagePath/explore_icon.png";
+  static const String resultIcon = "$imagePath/result_icon.png";
+  static const String profileIcon = "$imagePath/profile_icon.png";
 }

@@ -8,11 +8,11 @@ class AppValidators {
       r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
     );
     if (val == null) {
-      return S().emailIsRequired;
+      return AppLocalizations().emailIsRequired;
     } else if (val.trim().isEmpty) {
-      return S().emailIsRequired;
+      return AppLocalizations().emailIsRequired;
     } else if (emailRegex.hasMatch(val) == false) {
-      return S().enterValidEmail;
+      return AppLocalizations().enterValidEmail;
     } else {
       return null;
     }
@@ -21,11 +21,11 @@ class AppValidators {
   static String? validatePassword(String? val) {
     RegExp passwordRegex = RegExp(r'^(?=.*[a-zA-Z])(?=.*[0-9])');
     if (val == null) {
-      return S().passwordIsRequired;
+      return AppLocalizations().passwordIsRequired;
     } else if (val.isEmpty) {
-      return S().passwordIsRequired;
+      return AppLocalizations().passwordIsRequired;
     } else if (val.length < 8 || !passwordRegex.hasMatch(val)) {
-      return S().passwordNotMatched;
+      return AppLocalizations().passwordNotMatched;
     } else {
       return null;
     }
@@ -33,9 +33,9 @@ class AppValidators {
 
   static String? validateConfirmPassword(String? val, String? password) {
     if (val == null || val.isEmpty) {
-      return 'this field is required';
+      return AppLocalizations().passwordIsRequired;
     } else if (val != password) {
-      return 'same password';
+      return AppLocalizations().passwordNotMatched;
     } else {
       return null;
     }
@@ -44,11 +44,11 @@ class AppValidators {
   static String? validateUsername(String? val) {
     RegExp usernameRegex = RegExp(r'^[a-zA-Z0-9,.-]+$');
     if (val == null) {
-      return 'this field is required';
+      return AppLocalizations().thisFieldIsRequired;
     } else if (val.isEmpty) {
-      return 'this field is required';
+      return AppLocalizations().thisFieldIsRequired;
     } else if (!usernameRegex.hasMatch(val)) {
-      return 'enter valid username';
+      return AppLocalizations().enterValidUsername;
     } else {
       return null;
     }
@@ -56,7 +56,7 @@ class AppValidators {
 
   static String? validateFullName(String? val) {
     if (val == null || val.isEmpty) {
-      return 'this field is required';
+      return AppLocalizations().thisFieldIsRequired;
     } else {
       return null;
     }
@@ -64,11 +64,11 @@ class AppValidators {
 
   static String? validatePhoneNumber(String? val) {
     if (val == null) {
-      return 'this field is required';
+      return AppLocalizations().thisFieldIsRequired;
     } else if (int.tryParse(val.trim()) == null) {
-      return 'enter numbers only';
+      return AppLocalizations().enterNumbersOnly;
     } else if (val.trim().length != 11) {
-      return 'enter value must equal 11 digit';
+      return AppLocalizations().enterValueMustEqual11Digit;
     } else {
       return null;
     }
