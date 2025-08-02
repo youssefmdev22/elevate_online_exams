@@ -1,7 +1,7 @@
-import 'package:elevate_online_exams/api/model/request/login_request_model/login_request_model.dart';
 import 'package:elevate_online_exams/api/model/saved_user_credentials_model.dart';
 import 'package:elevate_online_exams/core/api_result/api_result.dart';
 import 'package:elevate_online_exams/domain/model/login_model.dart';
+import 'package:elevate_online_exams/domain/model/request_model/login_request_model.dart';
 import 'package:elevate_online_exams/domain/usecase/load_saved_user_credentials_use_case.dart';
 import 'package:elevate_online_exams/domain/usecase/login_use_case.dart';
 import 'package:elevate_online_exams/presentation/auth/login/view_models/login_view_model/login_states.dart';

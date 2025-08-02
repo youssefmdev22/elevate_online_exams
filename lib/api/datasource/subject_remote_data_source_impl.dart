@@ -14,7 +14,6 @@ class SubjectRemoteDataSourceImpl implements SubjectRemoteDataSource {
 
   @override
   Future<ApiResult<List<SubjectModel>>> getAllSubjects() async {
-
     List<SubjectModel> subjects = [];
 
     try {

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class HomeViewModel extends Cubit<HomeState>{
+class HomeViewModel extends Cubit<HomeState> {
   HomeViewModel() : super(HomeStateInitial());
 
   int selectedIndex = 0;
@@ -26,5 +26,4 @@ class HomeViewModel extends Cubit<HomeState>{
     pageController.dispose();
     return super.close();
   }
-  
 }

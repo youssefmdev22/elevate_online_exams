@@ -5,12 +5,14 @@ import 'package:elevate_online_exams/domain/repos/subject_exams_repo.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: SubjectExamsRepo)
-class SubjectExamsRepoImpl implements SubjectExamsRepo{
+class SubjectExamsRepoImpl implements SubjectExamsRepo {
   final SubjectExamsRemoteDataSource _subjectExamsRemoteDataSource;
   SubjectExamsRepoImpl(this._subjectExamsRemoteDataSource);
 
   @override
-  Future<ApiResult<List<SubjectExamsModel>>> getAllSubjectExams(String subjectId) {
+  Future<ApiResult<List<SubjectExamsModel>>> getAllSubjectExams(
+    String subjectId,
+  ) {
     return _subjectExamsRemoteDataSource.getAllSubjectExams(subjectId);
   }
 }

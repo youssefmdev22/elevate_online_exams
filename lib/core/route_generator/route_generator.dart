@@ -1,4 +1,5 @@
 import 'package:elevate_online_exams/core/route_generator/routes.dart';
+import 'package:elevate_online_exams/presentation/auth/change_password/views/screen/change_password_screen.dart';
 import 'package:elevate_online_exams/presentation/auth/login/views/login_view/screen/login_screen.dart';
 import 'package:elevate_online_exams/presentation/auth/register/views/register_view/screen/register_screen.dart';
 import 'package:elevate_online_exams/presentation/home/views/screen/home_screen.dart';
@@ -25,6 +26,11 @@ class RouteGenerator {
       case Routes.startExamScreen:
         return MaterialPageRoute(
           builder: (_) => StartExamScreen(),
+          settings: settings,
+        );
+      case Routes.changePasswordScreen:
+        return MaterialPageRoute(
+          builder: (_) => ChangePasswordScreen(),
           settings: settings,
         );
       default:

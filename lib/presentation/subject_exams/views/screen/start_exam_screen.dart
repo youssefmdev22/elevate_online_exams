@@ -107,20 +107,27 @@ class StartExamScreen extends StatelessWidget {
               ),
               SizedBox(height: 24.h),
               CustomInstructionsSection(),
-              SizedBox(height: 48.h,),
+              SizedBox(height: 48.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: SizedBox(
                   width: double.infinity,
                   height: 48.h,
-                  child: ElevatedButton(onPressed: (){
-                    // Navigate to the exam screen
-                  }, child: Text(AppLocalizations.of(context).start , style: AppTheme.getTextStyle(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.white,
-                  ),))),
-              )
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Navigate to the exam screen
+                    },
+                    child: Text(
+                      AppLocalizations.of(context).start,
+                      style: AppTheme.getTextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

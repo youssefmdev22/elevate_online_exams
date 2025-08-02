@@ -5,7 +5,7 @@ class SubjectExamsModel {
   String? subject;
   int? numberOfQuestions;
   bool? active;
-  
+
   SubjectExamsModel({
     this.id,
     this.title = "Exam Title",

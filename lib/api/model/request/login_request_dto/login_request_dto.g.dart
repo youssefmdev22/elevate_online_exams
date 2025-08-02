@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_request_model.dart';
+part of 'login_request_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-LoginRequestModel _$LoginRequestModelFromJson(Map<String, dynamic> json) =>
-    LoginRequestModel(
+LoginRequestDto _$LoginRequestDtoFromJson(Map<String, dynamic> json) =>
+    LoginRequestDto(
       email: json['email'] as String?,
       password: json['password'] as String?,
     );
 
-Map<String, dynamic> _$LoginRequestModelToJson(LoginRequestModel instance) =>
+Map<String, dynamic> _$LoginRequestDtoToJson(LoginRequestDto instance) =>
     <String, dynamic>{'email': instance.email, 'password': instance.password};

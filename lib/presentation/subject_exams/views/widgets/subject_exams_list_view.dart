@@ -5,7 +5,11 @@ import 'package:flutter/material.dart';
 class SubjectExamsListView extends StatelessWidget {
   final List<SubjectExamsModel> subjectExams;
   final String subjectName;
-  const SubjectExamsListView({super.key, required this.subjectExams, required this.subjectName});
+  const SubjectExamsListView({
+    super.key,
+    required this.subjectExams,
+    required this.subjectName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +17,9 @@ class SubjectExamsListView extends StatelessWidget {
       itemCount: subjectExams.length,
       itemBuilder: (context, index) {
         return SubjectExamsListViewItem(
-          subjectExam: subjectExams[index] , subjectName: subjectName);
+          subjectExam: subjectExams[index],
+          subjectName: subjectName,
+        );
       },
     );
   }

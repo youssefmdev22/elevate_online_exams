@@ -19,9 +19,10 @@ class SubjectExamsRemoteDataSourceImpl implements SubjectExamsRemoteDataSource {
     try {
       var response = await _webServices.getAllSubjectExams(subjectId);
       if (response.exams != null && response.exams!.isNotEmpty) {
-        subjectExams = response.exams!
-            .map((element) => SubjectExamsMapper.fromDto(element))
-            .toList();
+        subjectExams =
+            response.exams!
+                .map((element) => SubjectExamsMapper.fromDto(element))
+                .toList();
         return ApiSuccessResult(subjectExams);
       } else {
         return ApiErrorResult(AppLocalizations().noExamsFoundForThisSubject);

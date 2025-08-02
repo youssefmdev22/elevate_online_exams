@@ -10,7 +10,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SubjectExamsListViewItem extends StatelessWidget {
   final SubjectExamsModel subjectExam;
   final String subjectName;
-  const SubjectExamsListViewItem({super.key, required this.subjectExam, required this.subjectName});
+  const SubjectExamsListViewItem({
+    super.key,
+    required this.subjectExam,
+    required this.subjectName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +22,11 @@ class SubjectExamsListViewItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, Routes.startExamScreen,
-          arguments: {"exam": subjectExam, "subjectName": subjectName});
+          Navigator.pushNamed(
+            context,
+            Routes.startExamScreen,
+            arguments: {"exam": subjectExam, "subjectName": subjectName},
+          );
         },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 24.w),

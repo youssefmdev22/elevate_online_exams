@@ -4,5 +4,4 @@ class SubjectModel {
   String? icon;
 
   SubjectModel({this.id, this.name, this.icon});
-
 }

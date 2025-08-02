@@ -898,6 +898,36 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Profile Updated Successfully`
+  String get profileUpdatedSuccessfully {
+    return Intl.message(
+      'Profile Updated Successfully',
+      name: 'profileUpdatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password Changed Successfully`
+  String get passwordChangedSuccessfully {
+    return Intl.message(
+      'Password Changed Successfully',
+      name: 'passwordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to change password`
+  String get failedToChangePassword {
+    return Intl.message(
+      'Failed to change password',
+      name: 'failedToChangePassword',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

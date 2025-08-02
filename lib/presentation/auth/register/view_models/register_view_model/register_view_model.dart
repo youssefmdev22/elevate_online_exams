@@ -1,8 +1,7 @@
+import 'package:elevate_online_exams/domain/model/request_model/register_request_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-
-import '../../../../../api/model/request/register_request_model.dart';
 import '../../../../../core/api_result/api_result.dart';
 import '../../../../../domain/model/register_model.dart';
 import '../../../../../domain/usecase/register_use_case.dart';

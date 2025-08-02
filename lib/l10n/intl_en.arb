@@ -108,5 +108,8 @@
   "minutes": "Minutes",
   "from": "From:",
   "to": "To:",
-  "loremIpsumDolorSitAmetConsectetur": "• Lorem ipsum dolor sit amet consectetur."
+  "loremIpsumDolorSitAmetConsectetur": "• Lorem ipsum dolor sit amet consectetur.",
+  "profileUpdatedSuccessfully": "Profile Updated Successfully",
+  "passwordChangedSuccessfully": "Password Changed Successfully",
+  "failedToChangePassword": "Failed to change password"
 }

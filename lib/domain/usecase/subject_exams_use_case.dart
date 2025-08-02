@@ -8,7 +8,7 @@ class SubjectExamsUseCase {
   final SubjectExamsRepo _subjectExamsRepo;
   SubjectExamsUseCase(this._subjectExamsRepo);
 
-  Future<ApiResult<List<SubjectExamsModel>>> call (String subjectId) {
+  Future<ApiResult<List<SubjectExamsModel>>> call(String subjectId) {
     return _subjectExamsRepo.getAllSubjectExams(subjectId);
   }
 }

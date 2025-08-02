@@ -7,15 +7,15 @@ part 'subject_response.g.dart';
 
 @JsonSerializable()
 class SubjectResponse {
-	String? message;
-	Metadata? metadata;
-	List<SubjectDto>? subjects;
+  String? message;
+  Metadata? metadata;
+  List<SubjectDto>? subjects;
 
-	SubjectResponse({this.message, this.metadata, this.subjects});
+  SubjectResponse({this.message, this.metadata, this.subjects});
 
-	factory SubjectResponse.fromJson(Map<String, dynamic> json) {
-		return _$SubjectResponseFromJson(json);
-	}
+  factory SubjectResponse.fromJson(Map<String, dynamic> json) {
+    return _$SubjectResponseFromJson(json);
+  }
 
-	Map<String, dynamic> toJson() => _$SubjectResponseToJson(this);
+  Map<String, dynamic> toJson() => _$SubjectResponseToJson(this);
 }

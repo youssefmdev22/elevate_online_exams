@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../generated/l10n.dart';
 
-
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
   final LoginViewModel loginViewModel = getIt.get<LoginViewModel>();

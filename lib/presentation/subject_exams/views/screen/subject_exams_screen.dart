@@ -35,7 +35,9 @@ class SubjectExamsScreen extends StatelessWidget {
                 builder: (context, state) {
                   if (state is SubjectExamsStateSuccess) {
                     return SubjectExamsListView(
-                      subjectExams: state.subjectExams , subjectName: subjectName);
+                      subjectExams: state.subjectExams,
+                      subjectName: subjectName,
+                    );
                   } else if (state is SubjectExamsStateFailure) {
                     return Center(
                       child: Text(

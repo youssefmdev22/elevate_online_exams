@@ -4,15 +4,15 @@ part 'metadata.g.dart';
 
 @JsonSerializable()
 class Metadata {
-	int? currentPage;
-	int? numberOfPages;
-	int? limit;
+  int? currentPage;
+  int? numberOfPages;
+  int? limit;
 
-	Metadata({this.currentPage, this.numberOfPages, this.limit});
+  Metadata({this.currentPage, this.numberOfPages, this.limit});
 
-	factory Metadata.fromJson(Map<String, dynamic> json) {
-		return _$MetadataFromJson(json);
-	}
+  factory Metadata.fromJson(Map<String, dynamic> json) {
+    return _$MetadataFromJson(json);
+  }
 
-	Map<String, dynamic> toJson() => _$MetadataToJson(this);
+  Map<String, dynamic> toJson() => _$MetadataToJson(this);
 }

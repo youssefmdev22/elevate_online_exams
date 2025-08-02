@@ -107,6 +107,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "exam": MessageLookupByLibrary.simpleMessage("Exam"),
     "examScore": MessageLookupByLibrary.simpleMessage("Exam score"),
     "explore": MessageLookupByLibrary.simpleMessage("Explore"),
+    "failedToChangePassword": MessageLookupByLibrary.simpleMessage(
+      "Failed to change password",
+    ),
     "failedToParseResponse": MessageLookupByLibrary.simpleMessage(
       "Failed to parse error response.",
     ),
@@ -156,6 +159,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ok": MessageLookupByLibrary.simpleMessage("Ok"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Password Changed Successfully",
+    ),
     "passwordIsRequired": MessageLookupByLibrary.simpleMessage(
       "password is required",
     ),
@@ -167,6 +173,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Profile Updated Successfully",
+    ),
     "question": MessageLookupByLibrary.simpleMessage("Question"),
     "questionXofX": MessageLookupByLibrary.simpleMessage("Question X of X"),
     "receiveTimeout": MessageLookupByLibrary.simpleMessage(

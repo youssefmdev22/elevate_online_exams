@@ -9,7 +9,7 @@ class SubjectUseCase {
 
   const SubjectUseCase(this._subjectRepo);
 
-  Future<ApiResult<List<SubjectModel>>> call(){
+  Future<ApiResult<List<SubjectModel>>> call() {
     return _subjectRepo.getAllSubjects();
   }
 }
