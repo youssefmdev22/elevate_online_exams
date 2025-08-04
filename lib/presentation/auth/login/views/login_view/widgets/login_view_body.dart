@@ -58,7 +58,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(
           children: [
-            SizedBox(height: 8.h),
+            SizedBox(height: 16.h),
             const CustomLoginAppbar(),
             SizedBox(height: 24.h),
             LoginForm(loginViewModel: widget.loginViewModel),
@@ -99,7 +99,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, Routes.forgetScreen);
+                    Navigator.pushNamed(context, Routes.forgetPasswordScreen);
                   },
                   child: Text(
                     AppLocalizations.of(context).forgetPasswordQuestion,

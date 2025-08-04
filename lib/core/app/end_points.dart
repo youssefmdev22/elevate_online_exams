@@ -5,4 +5,7 @@ abstract class EndPoints {
   static const String getProfileData = "api/v1/auth/profileData";
   static const String editProfile = "api/v1/auth/editProfile";
   static const String changePassword = "api/v1/auth/changePassword";
+  static const String forgetPassword = "api/v1/auth/forgotPassword";
+  static const String verifyResetCode = "api/v1/auth/verifyResetCode";
+  static const String resetPassword = "api/v1/auth/resetPassword";
 }

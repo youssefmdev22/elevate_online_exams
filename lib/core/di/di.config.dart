@@ -33,17 +33,26 @@ import '../../domain/repos/subject_exams_repo.dart' as _i259;
 import '../../domain/repos/subject_repo.dart' as _i462;
 import '../../domain/usecase/change_password_use_case.dart' as _i1069;
 import '../../domain/usecase/edit_profile_use_case.dart' as _i762;
+import '../../domain/usecase/forget_password_use_case.dart' as _i206;
 import '../../domain/usecase/get_profile_data_use_case.dart' as _i104;
 import '../../domain/usecase/load_saved_user_credentials_use_case.dart'
     as _i156;
 import '../../domain/usecase/login_use_case.dart' as _i683;
 import '../../domain/usecase/register_use_case.dart' as _i717;
+import '../../domain/usecase/reset_password_use_case.dart' as _i903;
 import '../../domain/usecase/subject_exams_use_case.dart' as _i678;
 import '../../domain/usecase/subject_use_case.dart' as _i190;
+import '../../domain/usecase/verify_reset_code_use_case.dart' as _i389;
 import '../../presentation/auth/change_password/view_models/change_password_view_model.dart'
     as _i573;
 import '../../presentation/auth/edit_profile/view_models/edit_profile_view_model.dart'
     as _i112;
+import '../../presentation/auth/forget_password/view_models/forget_password_view_model/forget_password_view_model.dart'
+    as _i1036;
+import '../../presentation/auth/forget_password/view_models/reset_password_view_model/reset_password_view_model.dart'
+    as _i91;
+import '../../presentation/auth/forget_password/view_models/verify_reset_code_view_model/verify_reset_code_view_model.dart'
+    as _i121;
 import '../../presentation/auth/login/view_models/login_view_model/login_view_model.dart'
     as _i752;
 import '../../presentation/auth/register/view_models/register_view_model/register_view_model.dart'
@@ -98,6 +107,18 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i397.AuthOfflineDataSource>(),
       ),
     );
+    gh.factory<_i1069.ChangePasswordUseCase>(
+      () => _i1069.ChangePasswordUseCase(gh<_i595.AuthRepo>()),
+    );
+    gh.factory<_i762.EditProfileUseCase>(
+      () => _i762.EditProfileUseCase(gh<_i595.AuthRepo>()),
+    );
+    gh.factory<_i206.ForgetPasswordUseCase>(
+      () => _i206.ForgetPasswordUseCase(gh<_i595.AuthRepo>()),
+    );
+    gh.factory<_i104.GetProfileDataUseCase>(
+      () => _i104.GetProfileDataUseCase(gh<_i595.AuthRepo>()),
+    );
     gh.factory<_i156.LoadSavedUserCredentialsUseCase>(
       () => _i156.LoadSavedUserCredentialsUseCase(gh<_i595.AuthRepo>()),
     );
@@ -107,14 +128,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i717.RegisterUseCase>(
       () => _i717.RegisterUseCase(gh<_i595.AuthRepo>()),
     );
-    gh.factory<_i1069.ChangePasswordUseCase>(
-      () => _i1069.ChangePasswordUseCase(gh<_i595.AuthRepo>()),
+    gh.factory<_i903.ResetPasswordUseCase>(
+      () => _i903.ResetPasswordUseCase(gh<_i595.AuthRepo>()),
     );
-    gh.factory<_i762.EditProfileUseCase>(
-      () => _i762.EditProfileUseCase(gh<_i595.AuthRepo>()),
-    );
-    gh.factory<_i104.GetProfileDataUseCase>(
-      () => _i104.GetProfileDataUseCase(gh<_i595.AuthRepo>()),
+    gh.factory<_i389.VerifyResetCodeUseCase>(
+      () => _i389.VerifyResetCodeUseCase(gh<_i595.AuthRepo>()),
     );
     gh.factory<_i199.RegisterViewModel>(
       () => _i199.RegisterViewModel(gh<_i717.RegisterUseCase>()),
@@ -132,6 +150,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i156.LoadSavedUserCredentialsUseCase>(),
       ),
     );
+    gh.factory<_i1036.ForgetPasswordViewModel>(
+      () => _i1036.ForgetPasswordViewModel(gh<_i206.ForgetPasswordUseCase>()),
+    );
     gh.factory<_i678.SubjectExamsUseCase>(
       () => _i678.SubjectExamsUseCase(gh<_i259.SubjectExamsRepo>()),
     );
@@ -140,6 +161,15 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i573.ChangePasswordViewModel>(
       () => _i573.ChangePasswordViewModel(gh<_i1069.ChangePasswordUseCase>()),
+    );
+    gh.factory<_i121.VerifyResetCodeViewModel>(
+      () => _i121.VerifyResetCodeViewModel(
+        gh<_i206.ForgetPasswordUseCase>(),
+        gh<_i389.VerifyResetCodeUseCase>(),
+      ),
+    );
+    gh.factory<_i91.ResetPasswordViewModel>(
+      () => _i91.ResetPasswordViewModel(gh<_i903.ResetPasswordUseCase>()),
     );
     gh.factory<_i703.SubjectViewModel>(
       () => _i703.SubjectViewModel(gh<_i190.SubjectUseCase>()),

@@ -39,4 +39,5 @@ abstract class AppColors {
   static const Color lightGray = Color(0xffF0F0F0);
   static const Color shadowGray = Color(0xff2A2929);
   static const Color dividerBlue = Color(0xff809ACD);
+  static const Color pinCodeTextFiledColor = Color(0xFFDFE7F7);
 }

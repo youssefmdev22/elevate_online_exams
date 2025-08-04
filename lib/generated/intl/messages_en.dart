@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Browse by subject",
     ),
     "change": MessageLookupByLibrary.simpleMessage("Change"),
+    "checkYourEmail": MessageLookupByLibrary.simpleMessage("Check Your Email"),
     "close": MessageLookupByLibrary.simpleMessage("Close"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm password"),
     "connectionError": MessageLookupByLibrary.simpleMessage(
@@ -50,11 +51,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "connectionTimeout": MessageLookupByLibrary.simpleMessage(
       "Connection timeout. Please try again later.",
     ),
+    "continueKeyword": MessageLookupByLibrary.simpleMessage("Continue"),
     "correct": MessageLookupByLibrary.simpleMessage("Correct"),
     "correctedAnswersInfo": MessageLookupByLibrary.simpleMessage(
       "18 corrected answers in 25 min.",
     ),
     "currentPassword": MessageLookupByLibrary.simpleMessage("Current password"),
+    "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
+      "Didn\'t receive code? ",
+    ),
     "dioErrorCancel": MessageLookupByLibrary.simpleMessage(
       "Request was cancelled. Please retry.",
     ),
@@ -158,6 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t have an account? ",
     ),
     "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+    "otp": MessageLookupByLibrary.simpleMessage("OTP"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Password Changed Successfully",
@@ -165,6 +171,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordIsRequired": MessageLookupByLibrary.simpleMessage(
       "password is required",
     ),
+    "passwordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast":
+        MessageLookupByLibrary.simpleMessage(
+          "Password must not be empty and must contain 6 characters with upper case letter and one number at least",
+        ),
     "passwordNotMatched": MessageLookupByLibrary.simpleMessage(
       "Password not matched",
     ),
@@ -172,6 +182,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password must not be empty and must contain 6 characters with upper case letter and one number at least",
     ),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+    "pleaseEnterYourCodeThatSendToYourEmailAddress":
+        MessageLookupByLibrary.simpleMessage(
+          "Please enter your code that send to your email address",
+        ),
+    "pleaseEnterYourEmailAssociatedToYourAccount":
+        MessageLookupByLibrary.simpleMessage(
+          "Please enter your email associated to your account",
+        ),
+    "pleaseLoginAgain": MessageLookupByLibrary.simpleMessage(
+      "Please .. Login Again",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "profileUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
       "Profile Updated Successfully",
@@ -183,6 +204,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+    "resend": MessageLookupByLibrary.simpleMessage("Resend"),
     "resendCode": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive code? Resend",
     ),

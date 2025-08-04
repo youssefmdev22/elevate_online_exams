@@ -928,6 +928,88 @@ class AppLocalizations {
       args: [],
     );
   }
+
+  /// `Please enter your email associated to your account`
+  String get pleaseEnterYourEmailAssociatedToYourAccount {
+    return Intl.message(
+      'Please enter your email associated to your account',
+      name: 'pleaseEnterYourEmailAssociatedToYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continueKeyword {
+    return Intl.message(
+      'Continue',
+      name: 'continueKeyword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your code that send to your email address`
+  String get pleaseEnterYourCodeThatSendToYourEmailAddress {
+    return Intl.message(
+      'Please enter your code that send to your email address',
+      name: 'pleaseEnterYourCodeThatSendToYourEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn't receive code? `
+  String get didntReceiveCode {
+    return Intl.message(
+      'Didn\'t receive code? ',
+      name: 'didntReceiveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend`
+  String get resend {
+    return Intl.message('Resend', name: 'resend', desc: '', args: []);
+  }
+
+  /// `Password must not be empty and must contain 6 characters with upper case letter and one number at least`
+  String
+  get passwordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast {
+    return Intl.message(
+      'Password must not be empty and must contain 6 characters with upper case letter and one number at least',
+      name:
+          'passwordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP`
+  String get otp {
+    return Intl.message('OTP', name: 'otp', desc: '', args: []);
+  }
+
+  /// `Check Your Email`
+  String get checkYourEmail {
+    return Intl.message(
+      'Check Your Email',
+      name: 'checkYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please .. Login Again`
+  String get pleaseLoginAgain {
+    return Intl.message(
+      'Please .. Login Again',
+      name: 'pleaseLoginAgain',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

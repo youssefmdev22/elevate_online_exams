@@ -111,5 +111,14 @@
   "loremIpsumDolorSitAmetConsectetur": "• Lorem ipsum dolor sit amet consectetur.",
   "profileUpdatedSuccessfully": "Profile Updated Successfully",
   "passwordChangedSuccessfully": "Password Changed Successfully",
-  "failedToChangePassword": "Failed to change password"
+  "failedToChangePassword": "Failed to change password",
+  "pleaseEnterYourEmailAssociatedToYourAccount": "Please enter your email associated to your account",
+  "continueKeyword": "Continue",
+  "pleaseEnterYourCodeThatSendToYourEmailAddress": "Please enter your code that send to your email address",
+  "didntReceiveCode": "Didn't receive code? ",
+  "resend": "Resend",
+  "passwordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast": "Password must not be empty and must contain 6 characters with upper case letter and one number at least",
+  "otp": "OTP",
+  "checkYourEmail": "Check Your Email",
+  "pleaseLoginAgain": "Please .. Login Again"
 }

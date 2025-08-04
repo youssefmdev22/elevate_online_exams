@@ -19,7 +19,6 @@ class LoginScreen extends StatelessWidget {
       listener: (context, state) {
         if (state is LoginStateSuccess) {
           Navigator.of(context).maybePop();
-          // SharedPrefs.saveData(Constants.tokenKey, state.loginModel.token);
           Navigator.pushReplacementNamed(context, Routes.homeScreen);
         } else if (state is LoginStateFailure) {
           Navigator.of(context).pop();
