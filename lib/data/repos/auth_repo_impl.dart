@@ -106,17 +106,9 @@ class AuthRepoImpl implements AuthRepo {
   @override
   Future<ApiResult<ResetPasswordModel>> resetPassword(
     ResetPasswordRequestModel resetPasswordRequestModel,
-  ) async {
-    var result = await _authOnlineDataSource.resetPassword(
+  ) {
+    return _authOnlineDataSource.resetPassword(
       resetPasswordRequestModel,
     );
-    switch (result) {
-      case ApiSuccessResult<ResetPasswordModel>():
-        await _authOfflineDataSource.removeUserToken();
-        break;
-      default:
-        break;
-    }
-    return result;
   }
 }

@@ -52,15 +52,6 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                     AppLocalizations.of(context).passwordChangedSuccessfully,
                   ),
                 ),
-                content: Text(
-                  AppLocalizations.of(context).pleaseLoginAgain,
-                  textAlign: TextAlign.center,
-                  style: AppTheme.getTextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.gray,
-                  ),
-                ),
                 actions: [
                   TextButton(
                     onPressed: () async {
