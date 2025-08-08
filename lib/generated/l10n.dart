@@ -829,6 +829,21 @@ class AppLocalizations {
   String get unknown {
     return Intl.message('Unknown', name: 'unknown', desc: '', args: []);
   }
+
+  /// `Question %d of %d`
+  String get questionOf {
+    return Intl.message(
+      'Question %d of %d',
+      name: 'questionOf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View score`
+  String get viewScore {
+    return Intl.message('View score', name: 'viewScore', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {

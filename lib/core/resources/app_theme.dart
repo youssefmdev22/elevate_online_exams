@@ -51,6 +51,7 @@ abstract class AppTheme {
           fontWeight: FontWeight.w500,
         ),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+        side: BorderSide(color: AppColors.blue, width: 1.w)
       ),
     ),
     dialogTheme: DialogThemeData(

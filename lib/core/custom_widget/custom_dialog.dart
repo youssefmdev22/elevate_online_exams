@@ -14,7 +14,7 @@ class CustomDialog {
   CustomDialog.loading({
     required this.context,
     this.message,
-    bool cancelable = true,
+    bool cancelable = false,
   }) {
     showDialog(
       context: context,

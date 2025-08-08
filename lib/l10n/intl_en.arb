@@ -98,5 +98,7 @@
   "dioErrorCancel": "Request was cancelled. Please retry.",
   "connectionError": "Network error. Please check your internet connection.",
   "unknownError": "An unexpected error occurred:",
-  "unknown": "Unknown"
+  "unknown": "Unknown",
+  "questionOf": "Question %d of %d",
+  "viewScore": "View score"
 }

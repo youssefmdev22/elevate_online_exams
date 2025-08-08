@@ -153,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "questionOf": MessageLookupByLibrary.simpleMessage("Question %d of %d"),
     "questionXofX": MessageLookupByLibrary.simpleMessage("Question X of X"),
     "receiveTimeout": MessageLookupByLibrary.simpleMessage(
       "Server took too long to respond.",
@@ -190,6 +191,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "update": MessageLookupByLibrary.simpleMessage("Update"),
     "userName": MessageLookupByLibrary.simpleMessage("User name"),
+    "viewScore": MessageLookupByLibrary.simpleMessage("View score"),
     "yes": MessageLookupByLibrary.simpleMessage("Yes"),
     "yourScore": MessageLookupByLibrary.simpleMessage("Your score"),
   };
