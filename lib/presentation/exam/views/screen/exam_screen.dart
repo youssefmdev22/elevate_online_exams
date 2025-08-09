@@ -1,5 +1,6 @@
 import 'package:elevate_online_exams/core/resources/app_assets.dart';
 import 'package:elevate_online_exams/core/resources/app_colors.dart';
+import 'package:elevate_online_exams/domain/model/exam_model.dart';
 import 'package:elevate_online_exams/presentation/exam/view_models/exam_view_model.dart';
 import 'package:elevate_online_exams/presentation/exam/views/widgets/exam_questions.dart';
 import 'package:flutter/material.dart';
@@ -13,14 +14,9 @@ import '../widgets/exam_score.dart';
 import '../widgets/exam_timeout_dialog.dart';
 
 class ExamScreen extends StatefulWidget {
-  final String examId;
-  final int examDuration;
+  final ExamModel examModel;
 
-  const ExamScreen({
-    super.key,
-    required this.examId,
-    required this.examDuration,
-  });
+  const ExamScreen({super.key, required this.examModel});
 
   @override
   State<ExamScreen> createState() => _ExamScreenState();
@@ -33,8 +29,7 @@ class _ExamScreenState extends State<ExamScreen> {
   void initState() {
     super.initState();
     _examViewModel = getIt<ExamViewModel>();
-    _examViewModel.examId = widget.examId;
-    _examViewModel.examDuration = widget.examDuration;
+    _examViewModel.examModel = widget.examModel;
     _examViewModel.getAllExamQuestions();
   }
 

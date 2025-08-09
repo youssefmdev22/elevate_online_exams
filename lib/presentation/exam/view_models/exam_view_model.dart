@@ -4,8 +4,11 @@ import 'package:bloc/bloc.dart';
 import 'package:elevate_online_exams/api/model/request/questions/answers_request_model.dart';
 import 'package:elevate_online_exams/core/api_result/api_result.dart';
 import 'package:elevate_online_exams/domain/model/check_questions_model.dart';
+import 'package:elevate_online_exams/domain/model/exam_model.dart';
 import 'package:elevate_online_exams/domain/model/questions_model.dart';
+import 'package:elevate_online_exams/domain/model/result_model.dart';
 import 'package:elevate_online_exams/domain/usecase/get_all_exam_questions_use_case.dart';
+import 'package:elevate_online_exams/domain/usecase/save_result_use_case.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 
@@ -18,26 +21,27 @@ part 'exam_state.dart';
 class ExamViewModel extends Cubit<ExamState> {
   final GetAllExamQuestionsUseCase _getAllExamQuestionsUseCase;
   final CheckExamQuestionsUseCase _checkExamQuestionsUseCase;
+  final SaveResultUseCase _saveResultUseCase;
 
   ExamViewModel(
     this._getAllExamQuestionsUseCase,
     this._checkExamQuestionsUseCase,
+    this._saveResultUseCase,
   ) : super(ExamInitial());
 
   List<QuestionsModel> questionsList = [];
 
-  late final String examId;
-  late final int examDuration;
+  late final ExamModel examModel;
   Timer? _timer;
   late int totalQuestions;
-  late int remainingSeconds = examDuration * 60;
+  late int remainingSeconds = examModel.duration! * 60;
   ValueNotifier<String> timerValue = ValueNotifier("00:00");
   ValueNotifier<int> questionIndex = ValueNotifier(0);
   ValueNotifier<int?> answerIndex = ValueNotifier(-1);
 
   Future<void> getAllExamQuestions() async {
     emit(ExamLoading());
-    final response = await _getAllExamQuestionsUseCase(examId);
+    final response = await _getAllExamQuestionsUseCase(examModel.id!);
     switch (response) {
       case ApiSuccessResult<List<QuestionsModel>>():
         questionsList = response.data;
@@ -63,11 +67,18 @@ class ExamViewModel extends Cubit<ExamState> {
                   ),
                 )
                 .toList(),
-        time: examDuration,
+        time: examModel.duration,
       ),
     );
     switch (response) {
       case ApiSuccessResult<CheckQuestionsModel>():
+        _saveResultUseCase(
+          ResultModel(
+            examModel: examModel,
+            questionsList: questionsList,
+            correctAnswers: response.data.correct,
+          ),
+        );
         emit(ExamCheckQuestions(response.data));
       case ApiErrorResult<CheckQuestionsModel>():
         emit(ExamError(response.errorMessage));
@@ -93,7 +104,7 @@ class ExamViewModel extends Cubit<ExamState> {
   }
 
   bool isDangerTime() {
-    return (examDuration * 60) / 2 <= remainingSeconds;
+    return (examModel.duration! * 60) / 2 <= remainingSeconds;
   }
 
   void nextQuestion() {
@@ -128,7 +139,7 @@ class ExamViewModel extends Cubit<ExamState> {
 
   void restartExam() {
     _timer = null;
-    remainingSeconds = examDuration * 60;
+    remainingSeconds = examModel.duration! * 60;
     questionIndex.value = 0;
     answerIndex.value = -1;
     getAllExamQuestions();

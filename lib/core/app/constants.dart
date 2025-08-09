@@ -6,4 +6,5 @@ abstract class Constants {
   static const String robotoFont = "Roboto";
   static const String poppinsFont = "Poppins";
   static const String interFont = "Inter";
+  static const String hiveBox = "resultBox";
 }
