@@ -67,7 +67,7 @@ class ExamViewModel extends Cubit<ExamState> {
                   ),
                 )
                 .toList(),
-        time: examModel.duration,
+        time: examModel.duration! - (remainingSeconds ~/ 60),
       ),
     );
     switch (response) {
@@ -77,6 +77,7 @@ class ExamViewModel extends Cubit<ExamState> {
             examModel: examModel,
             questionsList: questionsList,
             correctAnswers: response.data.correct,
+            examTime: examModel.duration! - (remainingSeconds ~/ 60),
           ),
         );
         emit(ExamCheckQuestions(response.data));
@@ -143,5 +144,14 @@ class ExamViewModel extends Cubit<ExamState> {
     questionIndex.value = 0;
     answerIndex.value = -1;
     getAllExamQuestions();
+  }
+
+  @override
+  Future<void> close() {
+    _timer?.cancel();
+    timerValue.dispose();
+    questionIndex.dispose();
+    answerIndex.dispose();
+    return super.close();
   }
 }

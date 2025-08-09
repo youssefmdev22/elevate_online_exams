@@ -1,3 +1,4 @@
+import 'package:elevate_online_exams/core/app/constants.dart';
 import 'package:elevate_online_exams/core/resources/app_theme.dart';
 import 'package:elevate_online_exams/core/route_generator/route_generator.dart';
 import 'package:elevate_online_exams/core/route_generator/routes.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
+import 'core/app/shared_prefs.dart';
 import 'core/bloc/app_bloc_observer.dart';
 import 'core/di/di.dart';
 import 'domain/adapter/exam_adapter.dart';
@@ -21,6 +23,8 @@ Future<void> main() async {
   configureDependencies();
   Bloc.observer = AppBlocObserver();
 
+  String? myToken = await SharedPrefs.getData(Constants.tokenKey);
+
   var directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
   Hive.registerAdapter(AnswersAdapter());
@@ -28,11 +32,13 @@ Future<void> main() async {
   Hive.registerAdapter(QuestionsAdapter());
   Hive.registerAdapter(ResultAdapter());
 
-  runApp(const MyApp());
+  runApp(MyApp(myToken: myToken));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final String? myToken;
+
+  const MyApp({super.key, required this.myToken});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +51,8 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: AppTheme.lightTheme,
           onGenerateRoute: RouteGenerator.getRoute,
-          initialRoute: Routes.examScreen,
+          initialRoute:
+              myToken == null ? Routes.loginScreen : Routes.homeScreen,
           home: child,
           localizationsDelegates: [
             AppLocalizations.delegate,

@@ -1,6 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:elevate_online_exams/api/model/request/login_request_model/login_request_model.dart';
-import 'package:elevate_online_exams/api/model/response/questions/check_questions_response.dart';
 import 'package:elevate_online_exams/api/model/request/change_password_request_dto/change_password_request_dto.dart';
 import 'package:elevate_online_exams/api/model/request/edit_profile_request_dto/edit_profile_request_dto.dart';
 import 'package:elevate_online_exams/api/model/request/forget_password_request_dto/forget_password_request_dto.dart';
@@ -11,6 +9,7 @@ import 'package:elevate_online_exams/api/model/response/change_password_response
 import 'package:elevate_online_exams/api/model/response/edit_profile_response/edit_profile_response.dart';
 import 'package:elevate_online_exams/api/model/response/forget_password_response/forget_password_response_dto.dart';
 import 'package:elevate_online_exams/api/model/response/login_response.dart';
+import 'package:elevate_online_exams/api/model/response/questions/check_questions_response.dart';
 import 'package:elevate_online_exams/api/model/response/register_response.dart';
 import 'package:elevate_online_exams/api/model/response/reset_password_response/reset_password_response_dto.dart';
 import 'package:elevate_online_exams/api/model/response/subject_exams_response/subject_exams_response.dart';
@@ -21,8 +20,8 @@ import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../model/request/questions/questions_request_model.dart';
-import '../model/response/questions/questions_response.dart';
 import '../model/request/register_request_dto/register_request_dto.dart';
+import '../model/response/questions/questions_response.dart';
 
 part 'web_services.g.dart';
 
@@ -43,6 +42,8 @@ abstract class WebServices {
   Future<CheckQuestionsResponse> checkExamQuestions(
     @Body() QuestionsRequestModel questionsRequestModel,
   );
+
+  @POST(EndPoints.login)
   Future<LoginResponse> login(@Body() LoginRequestDto loginRequestDto);
 
   @GET(EndPoints.subjects)
@@ -67,13 +68,17 @@ abstract class WebServices {
   );
 
   @POST(EndPoints.forgetPassword)
-  Future<ForgetPasswordResponseDto> forgetPassword(@Body() ForgetPasswordRequestDto forgetPasswordRequestDto ,
+  Future<ForgetPasswordResponseDto> forgetPassword(
+    @Body() ForgetPasswordRequestDto forgetPasswordRequestDto,
   );
 
   @POST(EndPoints.verifyResetCode)
-  Future<VerifyResetCodeResponseDto> verifyResetCode (@Body() VerifyResetCodeRequestDto verifyResetCodeRequestDto,
+  Future<VerifyResetCodeResponseDto> verifyResetCode(
+    @Body() VerifyResetCodeRequestDto verifyResetCodeRequestDto,
   );
 
   @PUT(EndPoints.resetPassword)
-  Future <ResetPasswordResponseDto> resetPassword (@Body() ResetPasswordRequestDto resetPasswordRequestDto );
+  Future<ResetPasswordResponseDto> resetPassword(
+    @Body() ResetPasswordRequestDto resetPasswordRequestDto,
+  );
 }

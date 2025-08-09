@@ -41,7 +41,7 @@
   "answers": "Answers",
   "results": "Results",
   "language": "Language",
-  "correctedAnswersInfo": "18 corrected answers in 25 min.",
+  "correctedAnswersInfo": "%d corrected answers in %d min.",
   "math": "Math",
   "algebra": "Algebra",
   "explore": "Explore",
@@ -122,5 +122,6 @@
   "pleaseLoginAgain": "Please .. Login Again",
   "unknown": "Unknown",
   "questionOf": "Question %d of %d",
-  "viewScore": "View score"
+  "viewScore": "View score",
+  "noResultsFound": "No results found"
 }

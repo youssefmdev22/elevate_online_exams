@@ -1,14 +1,19 @@
 import 'package:elevate_online_exams/core/route_generator/routes.dart';
+import 'package:elevate_online_exams/domain/model/questions_model.dart';
+import 'package:elevate_online_exams/presentation/answers/views/screen/answers_screen.dart';
 import 'package:elevate_online_exams/presentation/auth/change_password/views/screen/change_password_screen.dart';
-import 'package:elevate_online_exams/presentation/auth/login/views/login_view/screen/login_screen.dart';
-import 'package:elevate_online_exams/presentation/auth/register/views/register_view/screen/register_screen.dart';
 import 'package:elevate_online_exams/presentation/auth/forget_password/views/screen/forget_password_screen.dart';
 import 'package:elevate_online_exams/presentation/auth/forget_password/views/screen/reset_password_screen.dart';
 import 'package:elevate_online_exams/presentation/auth/forget_password/views/screen/verify_reset_code_screen.dart';
+import 'package:elevate_online_exams/presentation/auth/login/views/login_view/screen/login_screen.dart';
+import 'package:elevate_online_exams/presentation/auth/register/views/register_view/screen/register_screen.dart';
 import 'package:elevate_online_exams/presentation/home/views/screen/home_screen.dart';
 import 'package:elevate_online_exams/presentation/subject_exams/views/screen/start_exam_screen.dart';
 import 'package:elevate_online_exams/presentation/subject_exams/views/screen/subject_exams_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../domain/model/exam_model.dart';
+import '../../presentation/exam/views/screen/exam_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
@@ -18,7 +23,10 @@ class RouteGenerator {
       case Routes.registerScreen:
         return MaterialPageRoute(builder: (_) => RegisterScreen());
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        final navigateToResult = settings.arguments as bool? ?? false;
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(navigateToResult: navigateToResult),
+        );
       case Routes.subjectExamsScreen:
         return MaterialPageRoute(
           builder: (_) => SubjectExamsScreen(),
@@ -51,15 +59,14 @@ class RouteGenerator {
         );
         return MaterialPageRoute(builder: (_) => Container());
       case Routes.examScreen:
-        //final examModel = settings.arguments as ExamModel;
+        final examModel = settings.arguments as ExamModel;
         return MaterialPageRoute(
-          builder:
-              (_) => ExamScreen(
-                examModel: ExamModel(
-                  id: "670070a830a3c3c1944a9c63",
-                  duration: 1,
-                ),
-              ),
+          builder: (_) => ExamScreen(examModel: examModel),
+        );
+      case Routes.answersScreen:
+        final questionsList = settings.arguments as List<QuestionsModel>;
+        return MaterialPageRoute(
+          builder: (_) => AnswersScreen(questionsList: questionsList),
         );
       default:
         return MaterialPageRoute(builder: (_) => Container());

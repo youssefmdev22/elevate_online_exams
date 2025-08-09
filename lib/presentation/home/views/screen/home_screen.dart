@@ -12,12 +12,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  final bool navigateToResult;
+  HomeScreen({super.key, this.navigateToResult = false});
 
   final HomeViewModel homeViewModel = getIt.get<HomeViewModel>();
 
   @override
   Widget build(BuildContext context) {
+    if (navigateToResult) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        homeViewModel.bottomNavBarOnTap(1);
+      });
+    }
     return BlocBuilder<HomeViewModel, HomeState>(
       bloc: homeViewModel,
       builder: (context, state) {

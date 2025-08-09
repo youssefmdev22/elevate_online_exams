@@ -38,7 +38,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "badResponse": MessageLookupByLibrary.simpleMessage(
       "Unexpected error response from server",
     ),
+    "browseBySubject": MessageLookupByLibrary.simpleMessage(
+      "Browse by subject",
+    ),
     "change": MessageLookupByLibrary.simpleMessage("Change"),
+    "checkYourEmail": MessageLookupByLibrary.simpleMessage("Check Your Email"),
     "close": MessageLookupByLibrary.simpleMessage("Close"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm password"),
     "connectionError": MessageLookupByLibrary.simpleMessage(
@@ -47,11 +51,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "connectionTimeout": MessageLookupByLibrary.simpleMessage(
       "Connection timeout. Please try again later.",
     ),
+    "continueKeyword": MessageLookupByLibrary.simpleMessage("Continue"),
     "correct": MessageLookupByLibrary.simpleMessage("Correct"),
     "correctedAnswersInfo": MessageLookupByLibrary.simpleMessage(
-      "18 corrected answers in 25 min.",
+      "%d corrected answers in %d min.",
     ),
     "currentPassword": MessageLookupByLibrary.simpleMessage("Current password"),
+    "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
+      "Didn\'t receive code? ",
+    ),
     "dioErrorCancel": MessageLookupByLibrary.simpleMessage(
       "Request was cancelled. Please retry.",
     ),
@@ -104,6 +112,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "exam": MessageLookupByLibrary.simpleMessage("Exam"),
     "examScore": MessageLookupByLibrary.simpleMessage("Exam score"),
     "explore": MessageLookupByLibrary.simpleMessage("Explore"),
+    "failedToChangePassword": MessageLookupByLibrary.simpleMessage(
+      "Failed to change password",
+    ),
     "failedToParseResponse": MessageLookupByLibrary.simpleMessage(
       "Failed to parse error response.",
     ),
@@ -113,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPasswordQuestion": MessageLookupByLibrary.simpleMessage(
       "Forget password?",
     ),
+    "from": MessageLookupByLibrary.simpleMessage("From:"),
     "highLevel": MessageLookupByLibrary.simpleMessage("High level"),
     "incorrect": MessageLookupByLibrary.simpleMessage("Incorrect"),
     "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
@@ -127,24 +139,43 @@ class MessageLookup extends MessageLookupByLibrary {
     "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
+    "loremIpsumDolorSitAmetConsectetur": MessageLookupByLibrary.simpleMessage(
+      "• Lorem ipsum dolor sit amet consectetur.",
+    ),
     "math": MessageLookupByLibrary.simpleMessage("Math"),
+    "minutes": MessageLookupByLibrary.simpleMessage("Minutes"),
     "newPassword": MessageLookupByLibrary.simpleMessage("New password"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "noAccountSignup": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Sign up",
     ),
+    "noExamsFoundForThisSubject": MessageLookupByLibrary.simpleMessage(
+      "No exams found for this subject",
+    ),
     "noResponse": MessageLookupByLibrary.simpleMessage(
       "No response received from server.",
+    ),
+    "noResultsFound": MessageLookupByLibrary.simpleMessage("No results found"),
+    "noSubjectsFound": MessageLookupByLibrary.simpleMessage(
+      "No subjects found",
     ),
     "notHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
     "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+    "otp": MessageLookupByLibrary.simpleMessage("OTP"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Password Changed Successfully",
+    ),
     "passwordIsRequired": MessageLookupByLibrary.simpleMessage(
       "password is required",
     ),
+    "passwordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast":
+        MessageLookupByLibrary.simpleMessage(
+          "Password must not be empty and must contain 6 characters with upper case letter and one number at least",
+        ),
     "passwordNotMatched": MessageLookupByLibrary.simpleMessage(
       "Password not matched",
     ),
@@ -152,7 +183,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password must not be empty and must contain 6 characters with upper case letter and one number at least",
     ),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+    "pleaseEnterYourCodeThatSendToYourEmailAddress":
+        MessageLookupByLibrary.simpleMessage(
+          "Please enter your code that send to your email address",
+        ),
+    "pleaseEnterYourEmailAssociatedToYourAccount":
+        MessageLookupByLibrary.simpleMessage(
+          "Please enter your email associated to your account",
+        ),
+    "pleaseLoginAgain": MessageLookupByLibrary.simpleMessage(
+      "Please .. Login Again",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Profile Updated Successfully",
+    ),
+    "question": MessageLookupByLibrary.simpleMessage("Question"),
     "questionOf": MessageLookupByLibrary.simpleMessage("Question %d of %d"),
     "questionXofX": MessageLookupByLibrary.simpleMessage("Question X of X"),
     "receiveTimeout": MessageLookupByLibrary.simpleMessage(
@@ -160,12 +206,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+    "resend": MessageLookupByLibrary.simpleMessage("Resend"),
     "resendCode": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive code? Resend",
     ),
     "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
     "result": MessageLookupByLibrary.simpleMessage("Result"),
     "results": MessageLookupByLibrary.simpleMessage("Results"),
+    "search": MessageLookupByLibrary.simpleMessage("Search"),
     "selectCorrectSentence": MessageLookupByLibrary.simpleMessage(
       "Select the correctly punctuated sentence.",
     ),
@@ -179,11 +227,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "start": MessageLookupByLibrary.simpleMessage("Start"),
     "startAgain": MessageLookupByLibrary.simpleMessage("Start again"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
+    "survey": MessageLookupByLibrary.simpleMessage("Survey"),
     "thirtyMinutes": MessageLookupByLibrary.simpleMessage("30 Minutes"),
     "thisFieldIsRequired": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
     "timeOut": MessageLookupByLibrary.simpleMessage("Time out !!"),
+    "to": MessageLookupByLibrary.simpleMessage("To:"),
     "twentyQuestions": MessageLookupByLibrary.simpleMessage("20 Question"),
     "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
     "unknownError": MessageLookupByLibrary.simpleMessage(

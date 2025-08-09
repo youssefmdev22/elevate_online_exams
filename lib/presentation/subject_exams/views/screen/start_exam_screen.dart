@@ -7,6 +7,8 @@ import 'package:elevate_online_exams/presentation/subject_exams/views/widgets/cu
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/route_generator/routes.dart';
+
 class StartExamScreen extends StatelessWidget {
   const StartExamScreen({super.key});
 
@@ -115,7 +117,11 @@ class StartExamScreen extends StatelessWidget {
                   height: 48.h,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navigate to the exam screen
+                      Navigator.pushNamed(
+                        context,
+                        Routes.examScreen,
+                        arguments: subjectExam.toExamModel(),
+                      );
                     },
                     child: Text(
                       AppLocalizations.of(context).start,

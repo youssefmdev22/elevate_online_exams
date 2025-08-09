@@ -1,6 +1,7 @@
 import 'package:elevate_online_exams/presentation/auth/edit_profile/views/screen/edit_profile_screen.dart';
 import 'package:elevate_online_exams/presentation/home/view_models/home_view_model/home_view_model.dart';
 import 'package:elevate_online_exams/presentation/home/views/pages/explore_page/views/screen/explore_page.dart';
+import 'package:elevate_online_exams/presentation/home/views/pages/result_page/views/screen/result_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomPageView extends StatelessWidget {
@@ -14,7 +15,7 @@ class CustomPageView extends StatelessWidget {
       onPageChanged: homeViewModel.onPageChanged,
       scrollDirection: Axis.horizontal,
       controller: homeViewModel.pageController,
-      children: [ExplorePage(), SizedBox(), EditProfileScreen()],
+      children: [ExplorePage(), ResultPage(), EditProfileScreen()],
     );
   }
 }

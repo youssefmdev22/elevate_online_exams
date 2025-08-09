@@ -13,15 +13,14 @@ class ResultAdapter extends TypeAdapter<ResultModel> {
     final questionsLength = reader.readInt();
     final questionsList = List.generate(
       questionsLength,
-          (_) => reader.read() as QuestionsModel,
+      (_) => reader.read() as QuestionsModel,
     );
-
-    final correctAnswers = reader.readInt();
 
     return ResultModel(
       examModel: examModel,
       questionsList: questionsList,
-      correctAnswers: correctAnswers,
+      correctAnswers: reader.readInt(),
+      examTime: reader.readInt(),
     );
   }
 
@@ -39,5 +38,7 @@ class ResultAdapter extends TypeAdapter<ResultModel> {
     }
 
     writer.writeInt(obj.correctAnswers ?? 0);
+
+    writer.writeInt(obj.examTime ?? 0);
   }
 }

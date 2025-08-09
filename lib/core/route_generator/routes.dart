@@ -9,4 +9,5 @@ abstract class Routes{
   static const String verifyResetCodeScreen = "/verifyResetCode";
   static const String resetPasswordScreen = "/resetPassword";
   static const String examScreen = "/exam";
+  static const String answersScreen = "/answers";
 }

@@ -13,17 +13,14 @@ class QuestionsAdapter extends TypeAdapter<QuestionsModel> {
           (_) => reader.read() as AnswersModel,
     );
 
-    final subjectValue = reader.read();
-    final examValue = reader.read();
-
     return QuestionsModel(
       answers: answers,
       type: reader.readString(),
       id: reader.readString(),
       question: reader.readString(),
       correct: reader.readString(),
-      subject: subjectValue,
-      exam: examValue is ExamModel ? examValue : null,
+      subject: reader.read(),
+      exam: reader.read() as ExamModel?,
       createdAt: reader.readString(),
       selectedAnswer: reader.readInt(),
     );

@@ -34,6 +34,12 @@ class _ExamScreenState extends State<ExamScreen> {
   }
 
   @override
+  void dispose() {
+    _examViewModel.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

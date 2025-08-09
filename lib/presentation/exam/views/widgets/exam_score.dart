@@ -1,4 +1,5 @@
 import 'package:elevate_online_exams/core/resources/app_colors.dart';
+import 'package:elevate_online_exams/core/route_generator/routes.dart';
 import 'package:elevate_online_exams/presentation/exam/view_models/exam_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -121,7 +122,14 @@ class ExamScoreScreen extends StatelessWidget {
           ),
           SizedBox(height: 56.h),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                Routes.homeScreen,
+                (route) => false,
+                arguments: true,
+              );
+            },
             child: Text(
               AppLocalizations.of(context).showResults,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(

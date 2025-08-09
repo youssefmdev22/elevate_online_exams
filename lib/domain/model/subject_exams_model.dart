@@ -1,3 +1,5 @@
+import 'package:elevate_online_exams/domain/model/exam_model.dart';
+
 class SubjectExamsModel {
   String? id;
   String? title;
@@ -14,4 +16,15 @@ class SubjectExamsModel {
     this.numberOfQuestions,
     this.active,
   });
+
+  ExamModel toExamModel() {
+    return ExamModel(
+      id: id,
+      title: title,
+      duration: duration,
+      subject: subject,
+      numberOfQuestions: numberOfQuestions,
+      active: active,
+    );
+  }
 }

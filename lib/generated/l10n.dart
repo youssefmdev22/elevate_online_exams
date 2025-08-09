@@ -28,10 +28,9 @@ class AppLocalizations {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<AppLocalizations> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -340,10 +339,10 @@ class AppLocalizations {
     return Intl.message('Language', name: 'language', desc: '', args: []);
   }
 
-  /// `18 corrected answers in 25 min.`
+  /// `%d corrected answers in %d min.`
   String get correctedAnswersInfo {
     return Intl.message(
-      '18 corrected answers in 25 min.',
+      '%d corrected answers in %d min.',
       name: 'correctedAnswersInfo',
       desc: '',
       args: [],
@@ -825,6 +824,188 @@ class AppLocalizations {
     );
   }
 
+  /// `No subjects found`
+  String get noSubjectsFound {
+    return Intl.message(
+      'No subjects found',
+      name: 'noSubjectsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Survey`
+  String get survey {
+    return Intl.message('Survey', name: 'survey', desc: '', args: []);
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `Browse by subject`
+  String get browseBySubject {
+    return Intl.message(
+      'Browse by subject',
+      name: 'browseBySubject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No exams found for this subject`
+  String get noExamsFoundForThisSubject {
+    return Intl.message(
+      'No exams found for this subject',
+      name: 'noExamsFoundForThisSubject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Question`
+  String get question {
+    return Intl.message('Question', name: 'question', desc: '', args: []);
+  }
+
+  /// `Minutes`
+  String get minutes {
+    return Intl.message('Minutes', name: 'minutes', desc: '', args: []);
+  }
+
+  /// `From:`
+  String get from {
+    return Intl.message('From:', name: 'from', desc: '', args: []);
+  }
+
+  /// `To:`
+  String get to {
+    return Intl.message('To:', name: 'to', desc: '', args: []);
+  }
+
+  /// `• Lorem ipsum dolor sit amet consectetur.`
+  String get loremIpsumDolorSitAmetConsectetur {
+    return Intl.message(
+      '• Lorem ipsum dolor sit amet consectetur.',
+      name: 'loremIpsumDolorSitAmetConsectetur',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile Updated Successfully`
+  String get profileUpdatedSuccessfully {
+    return Intl.message(
+      'Profile Updated Successfully',
+      name: 'profileUpdatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password Changed Successfully`
+  String get passwordChangedSuccessfully {
+    return Intl.message(
+      'Password Changed Successfully',
+      name: 'passwordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to change password`
+  String get failedToChangePassword {
+    return Intl.message(
+      'Failed to change password',
+      name: 'failedToChangePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email associated to your account`
+  String get pleaseEnterYourEmailAssociatedToYourAccount {
+    return Intl.message(
+      'Please enter your email associated to your account',
+      name: 'pleaseEnterYourEmailAssociatedToYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continueKeyword {
+    return Intl.message(
+      'Continue',
+      name: 'continueKeyword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your code that send to your email address`
+  String get pleaseEnterYourCodeThatSendToYourEmailAddress {
+    return Intl.message(
+      'Please enter your code that send to your email address',
+      name: 'pleaseEnterYourCodeThatSendToYourEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn't receive code? `
+  String get didntReceiveCode {
+    return Intl.message(
+      'Didn\'t receive code? ',
+      name: 'didntReceiveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend`
+  String get resend {
+    return Intl.message('Resend', name: 'resend', desc: '', args: []);
+  }
+
+  /// `Password must not be empty and must contain 6 characters with upper case letter and one number at least`
+  String
+  get passwordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast {
+    return Intl.message(
+      'Password must not be empty and must contain 6 characters with upper case letter and one number at least',
+      name:
+          'passwordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP`
+  String get otp {
+    return Intl.message('OTP', name: 'otp', desc: '', args: []);
+  }
+
+  /// `Check Your Email`
+  String get checkYourEmail {
+    return Intl.message(
+      'Check Your Email',
+      name: 'checkYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please .. Login Again`
+  String get pleaseLoginAgain {
+    return Intl.message(
+      'Please .. Login Again',
+      name: 'pleaseLoginAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Unknown`
   String get unknown {
     return Intl.message('Unknown', name: 'unknown', desc: '', args: []);
@@ -843,6 +1024,16 @@ class AppLocalizations {
   /// `View score`
   String get viewScore {
     return Intl.message('View score', name: 'viewScore', desc: '', args: []);
+  }
+
+  /// `No results found`
+  String get noResultsFound {
+    return Intl.message(
+      'No results found',
+      name: 'noResultsFound',
+      desc: '',
+      args: [],
+    );
   }
 }
 
