@@ -24,7 +24,7 @@ class RegisterDTO {
   @JsonKey(name: "createdAt")
   final String? createdAt;
 
-  RegisterDTO ({
+  RegisterDTO({
     this.username,
     this.firstName,
     this.lastName,
@@ -44,7 +44,7 @@ class RegisterDTO {
     return _$RegisterDTOToJson(this);
   }
 
-  RegisterModel toRegisterModel(){
+  RegisterModel toRegisterModel() {
     return RegisterModel(
       username: username,
       firstName: firstName,

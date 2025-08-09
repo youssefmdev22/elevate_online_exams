@@ -1,7 +1,6 @@
+import 'package:elevate_online_exams/domain/model/request_model/register_request_model.dart';
 import 'package:elevate_online_exams/domain/repos/auth_repo.dart';
 import 'package:injectable/injectable.dart';
-
-import '../../api/model/request/register_request_model.dart';
 import '../../core/api_result/api_result.dart';
 import '../model/register_model.dart';
 

@@ -7,11 +7,11 @@ class LoginStateInital extends LoginState {}
 class LoginStateLoading extends LoginState {}
 
 class LoginStateSuccess extends LoginState {
-  LoginModel loginModel;
+  final LoginModel loginModel;
   LoginStateSuccess({required this.loginModel});
 }
 
 class LoginStateFailure extends LoginState {
-  String errorMessage;
+  final String errorMessage;
   LoginStateFailure({required this.errorMessage});
 }

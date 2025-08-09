@@ -7,7 +7,7 @@ class LoadSavedUserCredentialsUseCase {
   final AuthRepo _authRepo;
   const LoadSavedUserCredentialsUseCase(this._authRepo);
 
-  Future<SavedUserCredentialsModel> call (){
+  Future<SavedUserCredentialsModel> call() {
     return _authRepo.loadSavedUserCredentials();
   }
 }

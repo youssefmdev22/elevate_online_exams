@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../generated/l10n.dart';
 
-
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
   final LoginViewModel loginViewModel = getIt.get<LoginViewModel>();
@@ -20,12 +19,12 @@ class LoginScreen extends StatelessWidget {
       listener: (context, state) {
         if (state is LoginStateSuccess) {
           Navigator.of(context).maybePop();
-          // SharedPrefs.saveData(Constants.tokenKey, state.loginModel.token);
           Navigator.pushReplacementNamed(context, Routes.homeScreen);
         } else if (state is LoginStateFailure) {
           Navigator.of(context).pop();
           showDialog(
             context: context,
+            barrierDismissible: false,
             builder: (_) {
               return AlertDialog(
                 title: Text(AppLocalizations.of(context).loginFailed),

@@ -31,7 +31,6 @@ String handleDioError(DioException error) {
 
 String _extractErrorMessageFromResponse(Response? response) {
   if (response == null) return AppLocalizations().noResponse;
-  
 
   try {
     final data = response.data;
@@ -60,5 +59,3 @@ String _extractErrorMessageFromResponse(Response? response) {
     return AppLocalizations().failedToParseResponse;
   }
 }
-
-

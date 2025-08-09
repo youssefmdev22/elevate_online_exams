@@ -20,6 +20,6 @@ class LoginModel {
     this.role,
     this.isVerified,
     this.createdAt,
-    this.token
+    this.token,
   });
 }

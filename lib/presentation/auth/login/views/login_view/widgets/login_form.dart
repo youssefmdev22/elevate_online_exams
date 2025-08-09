@@ -2,7 +2,6 @@ import 'package:elevate_online_exams/core/app/app_validators.dart';
 import 'package:elevate_online_exams/presentation/auth/login/view_models/login_view_model/login_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../../generated/l10n.dart';
 
 class LoginForm extends StatelessWidget {
