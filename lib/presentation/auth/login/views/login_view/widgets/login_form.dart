@@ -12,6 +12,7 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       key: loginViewModel.formKey,
+      autovalidateMode:AutovalidateMode.always,
       child: Column(
         children: [
           TextFormField(

@@ -1,12 +1,14 @@
-class SubjectExamsModel {
-  String? id;
-  String? title;
-  int? duration;
-  String? subject;
-  int? numberOfQuestions;
-  bool? active;
+import 'package:equatable/equatable.dart';
 
-  SubjectExamsModel({
+class SubjectExamsModel extends Equatable {
+  final String? id;
+  final String? title;
+  final int? duration;
+  final String? subject;
+  final int? numberOfQuestions;
+  final bool? active;
+
+  const SubjectExamsModel({
     this.id,
     this.title = "Exam Title",
     this.duration,
@@ -14,4 +16,7 @@ class SubjectExamsModel {
     this.numberOfQuestions,
     this.active,
   });
+  
+  @override
+  List<Object?> get props => [id,title,subject];
 }

@@ -19,8 +19,10 @@ class SubjectViewModel extends Cubit<SubjectState> {
       case ApiSuccessResult<List<SubjectModel>>():
         allSubjects = result.data;
         emit(SubjectStateSuccess(subjects: allSubjects));
+        break;
       case ApiErrorResult<List<SubjectModel>>():
         emit(SubjectStateFailure(errorMessage: result.errorMessage));
+        break;
     }
   }
 

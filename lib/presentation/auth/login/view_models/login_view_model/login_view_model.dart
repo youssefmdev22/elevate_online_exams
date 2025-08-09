@@ -30,7 +30,7 @@ class LoginViewModel extends Cubit<LoginState> {
   }
 
   Future<void> login(bool isCheckedRememberMe) async {
-    if (formKey.currentState!.validate()) {
+    // if (formKey.currentState == null || formKey.currentState!.validate()) {
       emit(LoginStateLoading());
 
       var result = await _loginUseCase.call(
@@ -45,7 +45,7 @@ class LoginViewModel extends Cubit<LoginState> {
           emit(LoginStateSuccess(loginModel: result.data));
         case ApiErrorResult<LoginModel>():
           emit(LoginStateFailure(errorMessage: result.errorMessage));
-      }
+      // }
     }
   }
 
