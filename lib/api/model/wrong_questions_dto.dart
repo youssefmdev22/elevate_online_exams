@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'answers_dto.dart';
 part 'wrong_questions_dto.g.dart';
 
 @JsonSerializable()
