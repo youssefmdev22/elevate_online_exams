@@ -33,41 +33,41 @@ class ResultItem extends StatelessWidget {
             spacing: 8.w,
             children: [
               Image.asset(ImageAssets.profitImage),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    spacing: 50.w,
-                    children: [
-                      Text(
-                        resultData.examModel?.title ?? "",
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                      Text(
-                        "${resultData.examModel?.duration.toString() ?? "00"} ${AppLocalizations.of(context).minutes}",
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "${resultData.examModel?.numberOfQuestions.toString() ?? "0"} ${AppLocalizations.of(context).question}",
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodySmall?.copyWith(color: AppColors.gray),
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    AppLocalizations.of(context).correctedAnswersInfo.format([
-                      resultData.correctAnswers,
-                      resultData.examTime,
-                    ]),
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodySmall?.copyWith(color: AppColors.blue),
-                  ),
-                ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          resultData.examModel?.title ?? "",
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                        Text(
+                          "${resultData.examModel?.duration.toString() ?? "00"} ${AppLocalizations.of(context).minutes}",
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "${resultData.examModel?.numberOfQuestions.toString() ?? "0"} ${AppLocalizations.of(context).question}",
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: AppColors.gray),
+                    ),
+                    SizedBox(height: 16.h),
+                    Text(
+                      AppLocalizations.of(context).correctedAnswersInfo.format([
+                        resultData.correctAnswers,
+                        resultData.examTime,
+                      ]),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: AppColors.blue),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
