@@ -1,7 +1,5 @@
 import 'package:elevate_online_exams/core/resources/app_colors.dart';
-import 'package:elevate_online_exams/core/resources/app_theme.dart';
 import 'package:elevate_online_exams/core/route_generator/routes.dart';
-import 'package:elevate_online_exams/l10n/get_translations.dart';
 import 'package:elevate_online_exams/presentation/auth/login/view_models/login_view_model/login_view_model.dart';
 import 'package:elevate_online_exams/presentation/auth/login/views/login_view/widgets/custom_login_appbar.dart';
 import 'package:elevate_online_exams/presentation/auth/login/views/login_view/widgets/login_form.dart';
@@ -9,8 +7,11 @@ import 'package:elevate_online_exams/presentation/auth/login/views/login_view/wi
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../generated/l10n.dart';
+
 class LoginViewBody extends StatefulWidget {
   final LoginViewModel loginViewModel;
+
   const LoginViewBody({super.key, required this.loginViewModel});
 
   @override
@@ -22,7 +23,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   void initState() {
     super.initState();
     widget.loginViewModel.loadSavedUserCredentials().then((result) {
-      if(result.isRemembered){
+      if (result.isRemembered) {
         setState(() {
           isCheckedRememberMe = true;
         });
@@ -49,6 +50,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
 
   bool isCheckedRememberMe = false;
   bool isFormValid = true;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -56,7 +58,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(
           children: [
-            SizedBox(height: 8.h),
+            SizedBox(height: 16.h),
             const CustomLoginAppbar(),
             SizedBox(height: 24.h),
             LoginForm(loginViewModel: widget.loginViewModel),
@@ -88,24 +90,23 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       ),
                     ),
                     Text(
-                      getTranslations(context).rememberMe,
-                      style: AppTheme.getInterTextStyle(
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      AppLocalizations.of(context).rememberMe,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(fontSize: 12.sp),
                     ),
                   ],
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, Routes.forgetScreen);
+                    Navigator.pushNamed(context, Routes.forgetPasswordScreen);
                   },
                   child: Text(
-                    getTranslations(context).forgetPasswordQuestion,
-                    style: AppTheme.getInterTextStyle(
+                    AppLocalizations.of(context).forgetPasswordQuestion,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       fontSize: 12.sp,
-                      fontWeight: FontWeight.w400,
-                    ).copyWith(decoration: TextDecoration.underline),
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                 ),
               ],
@@ -126,7 +127,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 },
 
                 child: Text(
-                  getTranslations(context).login,
+                  AppLocalizations.of(context).login,
                   style: TextStyle(color: AppColors.white),
                 ),
               ),

@@ -5,9 +5,9 @@ import 'package:injectable/injectable.dart';
 @injectable
 class LoadSavedUserCredentialsUseCase {
   final AuthRepo _authRepo;
-  LoadSavedUserCredentialsUseCase(this._authRepo);
+  const LoadSavedUserCredentialsUseCase(this._authRepo);
 
-  Future<SavedUserCredentialsModel> call (){
+  Future<SavedUserCredentialsModel> call() {
     return _authRepo.loadSavedUserCredentials();
   }
 }

@@ -1,8 +1,8 @@
-import 'package:elevate_online_exams/api/model/request/login_request_model/login_request_model.dart';
 import 'package:elevate_online_exams/api/model/saved_user_credentials_model.dart';
 import 'package:elevate_online_exams/core/app/constants.dart';
 import 'package:elevate_online_exams/core/app/shared_prefs.dart';
 import 'package:elevate_online_exams/data/datasource/auth_offline_data_source.dart';
+import 'package:elevate_online_exams/domain/model/request_model/login_request_model.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: AuthOfflineDataSource)
@@ -45,5 +45,10 @@ class AuthOfflineDataSourceImpl implements AuthOfflineDataSource {
         password: null,
       );
     }
+  }
+
+  @override
+  Future<void> removeUserToken() async {
+    await SharedPrefs.removeData(Constants.tokenKey);
   }
 }
