@@ -12,47 +12,46 @@ import 'intl/messages_all.dart';
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
 // ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
 
-class S {
-  S();
+class AppLocalizations {
+  AppLocalizations();
 
-  static S? _current;
+  static AppLocalizations? _current;
 
-  static S get current {
+  static AppLocalizations get current {
     assert(
       _current != null,
-      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+      'No instance of AppLocalizations was loaded. Try to initialize the AppLocalizations delegate before accessing AppLocalizations.current.',
     );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
-  static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+  static Future<AppLocalizations> load(Locale locale) {
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      final instance = S();
-      S._current = instance;
+      final instance = AppLocalizations();
+      AppLocalizations._current = instance;
 
       return instance;
     });
   }
 
-  static S of(BuildContext context) {
-    final instance = S.maybeOf(context);
+  static AppLocalizations of(BuildContext context) {
+    final instance = AppLocalizations.maybeOf(context);
     assert(
       instance != null,
-      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+      'No instance of AppLocalizations present in the widget tree. Did you add AppLocalizations.delegate in localizationsDelegates?',
     );
     return instance!;
   }
 
-  static S? maybeOf(BuildContext context) {
-    return Localizations.of<S>(context, S);
+  static AppLocalizations? maybeOf(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
   /// `Online Exams`
@@ -340,10 +339,10 @@ class S {
     return Intl.message('Language', name: 'language', desc: '', args: []);
   }
 
-  /// `18 corrected answers in 25 min.`
+  /// `%d corrected answers in %d min.`
   String get correctedAnswersInfo {
     return Intl.message(
-      '18 corrected answers in 25 min.',
+      '%d corrected answers in %d min.',
       name: 'correctedAnswersInfo',
       desc: '',
       args: [],
@@ -574,9 +573,471 @@ class S {
       args: [],
     );
   }
+
+  /// `Don't have an account? `
+  String get notHaveAnAccount {
+    return Intl.message(
+      'Don\'t have an account? ',
+      name: 'notHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `password is required`
+  String get passwordIsRequired {
+    return Intl.message(
+      'password is required',
+      name: 'passwordIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `email is required`
+  String get emailIsRequired {
+    return Intl.message(
+      'email is required',
+      name: 'emailIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `enter valid email`
+  String get enterValidEmail {
+    return Intl.message(
+      'enter valid email',
+      name: 'enterValidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login Failed`
+  String get loginFailed {
+    return Intl.message(
+      'Login Failed',
+      name: 'loginFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get close {
+    return Intl.message('Close', name: 'close', desc: '', args: []);
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message('Ok', name: 'ok', desc: '', args: []);
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message('No', name: 'no', desc: '', args: []);
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message('Yes', name: 'yes', desc: '', args: []);
+  }
+
+  /// `Loading...`
+  String get loading {
+    return Intl.message('Loading...', name: 'loading', desc: '', args: []);
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message('Register', name: 'register', desc: '', args: []);
+  }
+
+  /// `Success`
+  String get success {
+    return Intl.message('Success', name: 'success', desc: '', args: []);
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message('Error', name: 'error', desc: '', args: []);
+  }
+
+  /// `Account created successfully`
+  String get accountCreatedSuccessfully {
+    return Intl.message(
+      'Account created successfully',
+      name: 'accountCreatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter phone number`
+  String get enterPhoneNumber {
+    return Intl.message(
+      'Enter phone number',
+      name: 'enterPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter valid username`
+  String get enterValidUsername {
+    return Intl.message(
+      'Enter valid username',
+      name: 'enterValidUsername',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get thisFieldIsRequired {
+    return Intl.message(
+      'This field is required',
+      name: 'thisFieldIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter numbers only`
+  String get enterNumbersOnly {
+    return Intl.message(
+      'Enter numbers only',
+      name: 'enterNumbersOnly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter value must equal 11 digit`
+  String get enterValueMustEqual11Digit {
+    return Intl.message(
+      'Enter value must equal 11 digit',
+      name: 'enterValueMustEqual11Digit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connection timeout. Please try again later.`
+  String get connectionTimeout {
+    return Intl.message(
+      'Connection timeout. Please try again later.',
+      name: 'connectionTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request timed out. Please try again.`
+  String get sendTimeout {
+    return Intl.message(
+      'Request timed out. Please try again.',
+      name: 'sendTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Server took too long to respond.`
+  String get receiveTimeout {
+    return Intl.message(
+      'Server took too long to respond.',
+      name: 'receiveTimeout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bad certificate. Please check your device date/time.`
+  String get badCertificate {
+    return Intl.message(
+      'Bad certificate. Please check your device date/time.',
+      name: 'badCertificate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unexpected error response from server`
+  String get badResponse {
+    return Intl.message(
+      'Unexpected error response from server',
+      name: 'badResponse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No response received from server.`
+  String get noResponse {
+    return Intl.message(
+      'No response received from server.',
+      name: 'noResponse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to parse error response.`
+  String get failedToParseResponse {
+    return Intl.message(
+      'Failed to parse error response.',
+      name: 'failedToParseResponse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request was cancelled. Please retry.`
+  String get dioErrorCancel {
+    return Intl.message(
+      'Request was cancelled. Please retry.',
+      name: 'dioErrorCancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Network error. Please check your internet connection.`
+  String get connectionError {
+    return Intl.message(
+      'Network error. Please check your internet connection.',
+      name: 'connectionError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An unexpected error occurred:`
+  String get unknownError {
+    return Intl.message(
+      'An unexpected error occurred:',
+      name: 'unknownError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No subjects found`
+  String get noSubjectsFound {
+    return Intl.message(
+      'No subjects found',
+      name: 'noSubjectsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Survey`
+  String get survey {
+    return Intl.message('Survey', name: 'survey', desc: '', args: []);
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `Browse by subject`
+  String get browseBySubject {
+    return Intl.message(
+      'Browse by subject',
+      name: 'browseBySubject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No exams found for this subject`
+  String get noExamsFoundForThisSubject {
+    return Intl.message(
+      'No exams found for this subject',
+      name: 'noExamsFoundForThisSubject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Question`
+  String get question {
+    return Intl.message('Question', name: 'question', desc: '', args: []);
+  }
+
+  /// `Minutes`
+  String get minutes {
+    return Intl.message('Minutes', name: 'minutes', desc: '', args: []);
+  }
+
+  /// `From:`
+  String get from {
+    return Intl.message('From:', name: 'from', desc: '', args: []);
+  }
+
+  /// `To:`
+  String get to {
+    return Intl.message('To:', name: 'to', desc: '', args: []);
+  }
+
+  /// `• Lorem ipsum dolor sit amet consectetur.`
+  String get loremIpsumDolorSitAmetConsectetur {
+    return Intl.message(
+      '• Lorem ipsum dolor sit amet consectetur.',
+      name: 'loremIpsumDolorSitAmetConsectetur',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile Updated Successfully`
+  String get profileUpdatedSuccessfully {
+    return Intl.message(
+      'Profile Updated Successfully',
+      name: 'profileUpdatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password Changed Successfully`
+  String get passwordChangedSuccessfully {
+    return Intl.message(
+      'Password Changed Successfully',
+      name: 'passwordChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to change password`
+  String get failedToChangePassword {
+    return Intl.message(
+      'Failed to change password',
+      name: 'failedToChangePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email associated to your account`
+  String get pleaseEnterYourEmailAssociatedToYourAccount {
+    return Intl.message(
+      'Please enter your email associated to your account',
+      name: 'pleaseEnterYourEmailAssociatedToYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continueKeyword {
+    return Intl.message(
+      'Continue',
+      name: 'continueKeyword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your code that send to your email address`
+  String get pleaseEnterYourCodeThatSendToYourEmailAddress {
+    return Intl.message(
+      'Please enter your code that send to your email address',
+      name: 'pleaseEnterYourCodeThatSendToYourEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn't receive code? `
+  String get didntReceiveCode {
+    return Intl.message(
+      'Didn\'t receive code? ',
+      name: 'didntReceiveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend`
+  String get resend {
+    return Intl.message('Resend', name: 'resend', desc: '', args: []);
+  }
+
+  /// `Password must not be empty and must contain 6 characters with upper case letter and one number at least`
+  String
+  get passwordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast {
+    return Intl.message(
+      'Password must not be empty and must contain 6 characters with upper case letter and one number at least',
+      name:
+          'passwordMustNotBeEmptyAndMustContain6CharactersWithUpperCaseLetterAndOneNumberAtLeast',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP`
+  String get otp {
+    return Intl.message('OTP', name: 'otp', desc: '', args: []);
+  }
+
+  /// `Check Your Email`
+  String get checkYourEmail {
+    return Intl.message(
+      'Check Your Email',
+      name: 'checkYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please .. Login Again`
+  String get pleaseLoginAgain {
+    return Intl.message(
+      'Please .. Login Again',
+      name: 'pleaseLoginAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown`
+  String get unknown {
+    return Intl.message('Unknown', name: 'unknown', desc: '', args: []);
+  }
+
+  /// `Question %d of %d`
+  String get questionOf {
+    return Intl.message(
+      'Question %d of %d',
+      name: 'questionOf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View score`
+  String get viewScore {
+    return Intl.message('View score', name: 'viewScore', desc: '', args: []);
+  }
+
+  /// `No results found`
+  String get noResultsFound {
+    return Intl.message(
+      'No results found',
+      name: 'noResultsFound',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
-class AppLocalizationDelegate extends LocalizationsDelegate<S> {
+class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
@@ -586,7 +1047,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
   @override
-  Future<S> load(Locale locale) => S.load(locale);
+  Future<AppLocalizations> load(Locale locale) => AppLocalizations.load(locale);
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

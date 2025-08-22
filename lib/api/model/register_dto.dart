@@ -20,11 +20,11 @@ class RegisterDTO {
   @JsonKey(name: "isVerified")
   final bool? isVerified;
   @JsonKey(name: "_id")
-  final String? Id;
+  final String? id;
   @JsonKey(name: "createdAt")
   final String? createdAt;
 
-  RegisterDTO ({
+  RegisterDTO({
     this.username,
     this.firstName,
     this.lastName,
@@ -32,7 +32,7 @@ class RegisterDTO {
     this.phone,
     this.role,
     this.isVerified,
-    this.Id,
+    this.id,
     this.createdAt,
   });
 
@@ -44,7 +44,7 @@ class RegisterDTO {
     return _$RegisterDTOToJson(this);
   }
 
-  RegisterModel toRegisterModel(){
+  RegisterModel toRegisterModel() {
     return RegisterModel(
       username: username,
       firstName: firstName,
@@ -53,7 +53,7 @@ class RegisterDTO {
       phone: phone,
       role: role,
       isVerified: isVerified,
-      Id: Id,
+      id: id,
       createdAt: createdAt,
     );
   }

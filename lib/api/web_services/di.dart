@@ -9,7 +9,6 @@ import '../../core/app/shared_prefs.dart';
 @module
 abstract class NetworkModule {
   @singleton
-  @injectable
   BaseOptions provideBaseOptions() {
     return BaseOptions(
       baseUrl: "https://exam.elevateegy.com/",
@@ -20,7 +19,6 @@ abstract class NetworkModule {
   }
 
   @singleton
-  @injectable
   PrettyDioLogger providePrettyDioLogger() {
     return PrettyDioLogger(
       requestHeader: true,
@@ -32,7 +30,6 @@ abstract class NetworkModule {
   }
 
   @singleton
-  @injectable
   Dio provideDio(BaseOptions baseOptions, PrettyDioLogger prettyDioLogger) {
     Dio dio = Dio(baseOptions);
 
@@ -53,6 +50,5 @@ abstract class NetworkModule {
   }
 
   @singleton
-  @injectable
   WebServices provideWebServices(Dio client) => WebServices(client);
 }

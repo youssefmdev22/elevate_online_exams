@@ -12,11 +12,7 @@ class RegisterResponse {
   @JsonKey(name: "user")
   final RegisterDTO? user;
 
-  RegisterResponse ({
-    this.message,
-    this.token,
-    this.user,
-  });
+  RegisterResponse({this.message, this.token, this.user});
 
   factory RegisterResponse.fromJson(Map<String, dynamic> json) {
     return _$RegisterResponseFromJson(json);

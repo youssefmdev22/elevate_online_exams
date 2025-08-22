@@ -6,7 +6,7 @@ class RegisterModel {
   final String? phone;
   final String? role;
   final bool? isVerified;
-  final String? Id;
+  final String? id;
   final String? createdAt;
 
   RegisterModel({
@@ -17,7 +17,7 @@ class RegisterModel {
     this.phone,
     this.role,
     this.isVerified,
-    this.Id,
+    this.id,
     this.createdAt,
   });
 }
